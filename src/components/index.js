@@ -3,3 +3,4 @@ import Input from "./Input";
 
 export { Button, Input };
 export * from "./Icons";
+export * from "./Card";

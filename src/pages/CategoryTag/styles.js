@@ -1,37 +1,31 @@
 import styled from "styled-components";
 import { theme } from "../../theme";
-
 export const Wrapper = styled.div`
+  margin-bottom: 6rem;
   .heading {
-    font-size: ${theme.sizes.h2};
-    font-weight: 800;
+    font-size: ${theme.sizes.h3};
+    font-weight: 400;
     color: ${theme.colors.textColor4};
     text-align: center;
-    margin: 2rem;
+    margin: 2rem 4rem;
+    line-height: 35px;
   }
   .customInput {
     margin-bottom: 1.5rem;
     color: ${theme.colors.textColor2};
   }
-  .signupBtnWrap {
-    width: 100%;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    padding: 0 1rem;
-    z-index: 3;
-  }
-  .signupBtn {
+  .categoryTag {
     height: 48px;
     font-size: ${theme.sizes.h8};
   }
 
-  .redirectToLogin {
-    display: block;
+  .skip {
+    display: flex;
+    align-items: center;
     color: ${theme.colors.textColor2};
     font-size: ${theme.sizes.h6};
     margin-bottom: 6rem;
-    text-align: right;
+    justify-content: right;
     margin-right: 1rem;
     a {
       text-decoration: none;
@@ -41,22 +35,34 @@ export const Wrapper = styled.div`
     }
   }
 
+  .getStartedBtnWrap {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 0 1rem;
+    margin: 1rem 0;
+    z-index: 3;
+  }
+  .getStartedBtn {
+    height: 48px;
+    font-size: ${theme.sizes.h8};
+  }
+
   @media (min-width: 769px) {
-    .signupBtnWrap {
+    .skip {
+      display: none;
+    }
+    .getStartedBtnWrap {
       position: relative;
       padding: 0;
-      margin-top: 2rem;
-    }
-    .redirectToLogin {
-      display: none;
     }
   }
 `;
 
-export const FormWrap = styled.div`
-  width: 100%;
-  margin: 0 auto;
-  @media (min-width: 769px) {
-    width: 60%;
-  }
+export const CategoryTagWrap = styled.div`
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  margin: 0 1rem;
 `;

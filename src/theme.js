@@ -23,5 +23,6 @@ export const theme = {
     h6: "14px",
     h7: "12px",
     h8: "16px",
+    h9: "18px",
   },
 };

@@ -12,8 +12,10 @@ export const FooterWrapper = styled.footer`
   padding: 1rem 2rem;
   box-shadow: 0px -6px 9px 3px rgba(0, 0, 0, 0.2);
   justify-content: space-between;
+  background: ${theme.colors.mainBackground};
   @media (max-width: 768px) {
     display: block;
+    background: ${theme.colors.mainBackground};
   }
   .nav-list {
     list-style: none;
