@@ -2,10 +2,8 @@ import styled from "styled-components";
 import { theme } from "../../../theme";
 
 export const Card = styled.div`
-  min-width: 142px;
-  min-height: 158px;
-  width: 100%;
-  height: 100%;
+  width: 142px;
+  height: 158px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -13,6 +11,10 @@ export const Card = styled.div`
   background: ${theme.colors.mainBackground};
   box-shadow: 0px 8px 12px 2px rgba(0, 0, 0, 0.32);
   border-radius: 16px;
+  @media (min-width: 769px) {
+    width: 250px;
+    height: 240px;
+  }
 `;
 
 export const CardImage = styled.div`
@@ -40,5 +42,13 @@ export const CardBody = styled.div`
     text-align: center;
     font-weight: 400;
     font-size: ${theme.sizes.h7};
+  }
+  @media (min-width: 769px) {
+    .exp-name {
+      font-size: ${theme.sizes.h2};
+    }
+    .category {
+      font-size: ${theme.sizes.h8};
+    }
   }
 `;

@@ -19,7 +19,7 @@ export default function ExperienceCard({ cardDetails }) {
           container
           alignItems="center"
           justifyContent="space-between"
-          margin="0 0 8px 0"
+          margin="0 0 4px 0"
         >
           <div className="expertImgDiv">
             <img
@@ -37,7 +37,7 @@ export default function ExperienceCard({ cardDetails }) {
           container
           alignItems="center"
           justifyContent="space-between"
-          margin="0 0 8px 0"
+          margin="0 0 4px 0"
         >
           <p className="exp-info">{cardDetails.guestAllowed}</p>
           <p className="exp-info">$ {cardDetails.price}</p>

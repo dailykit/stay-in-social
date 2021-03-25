@@ -1,57 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button, Input, ChevronRight } from "../../components";
 import { theme } from "../../theme";
+import { categories } from "../../fakeData";
 import { Wrapper, CategoryTagWrap } from "./styles";
 
 export default function CategoryTagPage() {
   const [selectedButtons, setSelectedButtons] = useState([]);
-  const categories = [
-    "Cooking",
-    "Baking",
-    "Cocktails",
-    "Mixology",
-    "Wine Tasting",
-    "Drink / Food Pairings",
-    "Floral Arrangement",
-    "Succulent Arrangement",
-    "Cookie Decorating",
-    "Cake Decorating",
-    "Candle Making",
-    "Crafts",
-    "Magic",
-    "Soap Making",
-    "Knitting Classes",
-    "Games",
-    "Entertaining at Home",
-    "Personal Fashion Styling",
-    "Makeup",
-    "Hair Styling",
-    "Classes",
-    "Shows",
-    "Interactivity",
-    "30 min Experiences",
-    "45 min Experiences",
-    "60 min Experiences",
-    "60+ min Experiences",
-    "Learning New Skills",
-    "Socializing",
-    "New Technology",
-    "Discovering New Products",
-    "Holidays",
-    "Themes",
-    "Private Experiences",
-    "Group Experiences",
-    "Meeting New People",
-    "Dating",
-    "Custom Experiences",
-    "Beginner Level",
-    "Intermediate Level",
-    "Advanced Level",
-    "Kits Included",
-    "Last Minute Sign Up",
-    "Easy Participation",
-  ];
+
   const tagSelection = (index) => {
     const selectedBtnIndex = selectedButtons.findIndex((i) => i === index);
     console.log("index", selectedBtnIndex);

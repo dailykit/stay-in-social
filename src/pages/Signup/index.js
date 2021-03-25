@@ -6,7 +6,7 @@ import { Wrapper, FormWrap } from "./styles";
 export default function Signup() {
   return (
     <Wrapper>
-      <p class="redirectToLogin">
+      <p className="redirectToLogin">
         Already have an account? <Link to="/login">Log In</Link>
       </p>
       <h1 className="heading">Sign Up</h1>
