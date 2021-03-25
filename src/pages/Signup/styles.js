@@ -20,6 +20,7 @@ export const Wrapper = styled.div`
     bottom: 0;
     padding: 0 1rem;
     z-index: 3;
+    margin: 1rem 0;
   }
   .signupBtn {
     height: 48px;
