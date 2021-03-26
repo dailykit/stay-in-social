@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { Flex } from "@dailykit/ui";
 import { NavLink } from "react-router-dom";
 import { NavBar } from "./styles";
-import { BrandLogo, Button } from "../../components";
+import { BrandLogo, Button, Modal } from "../../components";
 import { theme } from "../../theme";
+import Login from "../../pages/Login";
+import Signup from "../../pages/Signup";
 
 export default function Header() {
+  const [loginModalOpen, setLoginModalOpen] = useState(false);
+  const [signupModalOpen, setSignupModalOpen] = useState(false);
+  const closeModal = () => {
+    setSignupModalOpen(false);
+    setLoginModalOpen(false);
+  };
   return (
     <NavBar>
       <Flex container alignItems="center">
@@ -33,7 +41,7 @@ export default function Header() {
       </ul>
       <div className="spacer" />
       <ul className="nav-list">
-        <NavLink to="/signup" className="buttonWrapper">
+        <li onClick={() => setSignupModalOpen(true)} className="buttonWrapper">
           <Button
             className="customBtn"
             textColor={theme.colors.textColor4}
@@ -41,8 +49,8 @@ export default function Header() {
           >
             Sign Up
           </Button>
-        </NavLink>
-        <NavLink to="/login" className="buttonWrapper">
+        </li>
+        <li onClick={() => setLoginModalOpen(true)} className="buttonWrapper">
           <Button
             className="customBtn"
             textColor={theme.colors.textColor4}
@@ -50,8 +58,14 @@ export default function Header() {
           >
             Log In
           </Button>
-        </NavLink>
+        </li>
       </ul>
+      <Modal isOpen={loginModalOpen} isClose={closeModal}>
+        <Login isOpen={loginModalOpen} authBtnClassName="auth-btn" />
+      </Modal>
+      <Modal isOpen={signupModalOpen} isClose={closeModal}>
+        <Signup isOpen={signupModalOpen} authBtnClassName="auth-btn" />
+      </Modal>
     </NavBar>
   );
 }

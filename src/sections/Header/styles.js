@@ -56,5 +56,10 @@ export const NavBar = styled.nav`
   .customBtn {
     height: 38px;
     font-size: ${theme.sizes.h6};
+    min-width: 125px;
+  }
+  .auth-btn {
+    position: absolute;
+    margin: 2rem;
   }
 `;

@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 import { Button, Input } from "../../components";
 import { Wrapper, FormWrap } from "./styles";
 
-export default function Login() {
+export default function Login({ authBtnClassName, ...props }) {
   return (
-    <Wrapper>
+    <Wrapper {...props}>
       <p class="redirectToSignup">
         Don't have an account? <Link to="/signup">SIGN UP</Link>
       </p>
       <h1 className="heading">Log In</h1>
-      <FormWrap>
+      <FormWrap {...props}>
         <Input type="email" placeholder="Your email" className="customInput" />
         <Input
           type="password"
@@ -19,7 +19,7 @@ export default function Login() {
         />
         <p className="forgotPassword">Forgot Password?</p>
 
-        <div className="loginBtnWrap">
+        <div className={`loginBtnWrap ${authBtnClassName}`}>
           <Button className="loginBtn">Log in</Button>
         </div>
       </FormWrap>

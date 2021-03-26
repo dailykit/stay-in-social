@@ -11,7 +11,7 @@ export const StyledWrapper = styled.div`
     color: ${theme.colors.textColor4};
     font-weight: 400;
     text-align: center;
-    margin-bottom: 8px;
+    margin-bottom: 20px;
   }
   @media (min-width: 769px) {
     .experienceHeading {
@@ -29,13 +29,24 @@ export const CardWrapperForExpert = styled.div`
 `;
 
 export const GridViewWrapper = styled.div`
-  margin-bottom: 1rem;
+  margin-bottom: 168px;
   .explore {
     text-align: center;
     font-size: ${theme.sizes.h4};
     color: ${theme.colors.textColor};
     font-weight: 800;
     margin-right: 8px;
+  }
+  .my-masonry-grid {
+    display: -webkit-box; /* Not needed if autoprefixing */
+    display: -ms-flexbox; /* Not needed if autoprefixing */
+    display: flex;
+    width: auto;
+    margin-right: 40px;
+  }
+
+  .my-masonry-grid_column > div {
+    margin: 0 0 40px 40px;
   }
 
   @media (min-width: 769px) {
@@ -44,6 +55,14 @@ export const GridViewWrapper = styled.div`
       font-size: ${theme.sizes.h1};
       color: ${theme.colors.textColor};
       font-weight: 800;
+    }
+  }
+  @media (max-width: 800px) {
+    .my-masonry-grid {
+      margin-right: 1rem;
+    }
+    .my-masonry-grid_column > div {
+      margin: 0 0 1rem 1rem;
     }
   }
 `;
@@ -78,6 +97,7 @@ export const GreetingDiv = styled.div`
   color: ${theme.colors.textColor4};
   padding: 30% 1rem;
   overflow: hidden;
+  margin-bottom: 80px;
   &:after {
     width: 100%;
     height: 400px;
@@ -150,13 +170,17 @@ export const GreetingDiv = styled.div`
 `;
 
 export const CategoryTagWrap = styled.div`
-  display: grid;
-  grid-gap: 16px;
-  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-  margin: 0 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   .categoryTag {
     height: 48px;
     font-size: ${theme.sizes.h8};
+    width: auto;
+    padding: 0 1rem;
+    margin: 0 0 1rem 1rem;
+    text-transform: none;
+    font-weight: 500;
   }
 `;
 

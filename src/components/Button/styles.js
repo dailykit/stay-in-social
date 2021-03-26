@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const StyledButton = styled.button`
-  min-width: 125px;
   width: 100%;
   font-size: ${({ fontSize }) => fontSize};
   height: ${({ height }) => height || "38px"};

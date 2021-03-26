@@ -24,6 +24,7 @@ export const Wrapper = styled.div`
   .loginBtn {
     height: 48px;
     font-size: ${theme.sizes.h8};
+    width: ${({ isOpen }) => isOpen && "90%"};
   }
   .forgotPassword {
     color: ${theme.colors.textColor4};
@@ -52,6 +53,7 @@ export const Wrapper = styled.div`
     .loginBtnWrap {
       position: relative;
       padding: 0;
+      z-index: 0;
     }
     .redirectToSignup {
       display: none;
@@ -63,6 +65,6 @@ export const FormWrap = styled.div`
   width: 100%;
   margin: 0 auto;
   @media (min-width: 769px) {
-    width: 60%;
+    width: ${({ isOpen }) => (isOpen ? "80%" : "65%")};
   }
 `;

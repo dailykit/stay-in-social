@@ -8,10 +8,7 @@ export default function ExperienceCard({ cardDetails }) {
   return (
     <Card>
       <CardImage>
-        <img
-          src="https://www.dmarge.com/wp-content/uploads/2020/07/gin-martini-cocktail.jpg"
-          alt="card-img"
-        />
+        <img src={cardDetails.image} alt="card-img" />
       </CardImage>
       <CardBody>
         <h2 className="exp-name">{cardDetails.name}</h2>
@@ -39,7 +36,10 @@ export default function ExperienceCard({ cardDetails }) {
           justifyContent="space-between"
           margin="0 0 4px 0"
         >
-          <p className="exp-info">{cardDetails.guestAllowed}</p>
+          <p className="exp-info">
+            <span>starts from </span>
+            {cardDetails.guestAllowed}
+          </p>
           <p className="exp-info">$ {cardDetails.price}</p>
         </Flex>
         <p className="book-exp">Book</p>

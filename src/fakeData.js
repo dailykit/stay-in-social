@@ -56,6 +56,8 @@ export const selectedCategories = [
 export const dataArray = [
   {
     name: "Bartender’s Handshake",
+    image:
+      "https://www.dmarge.com/wp-content/uploads/2020/07/gin-martini-cocktail.jpg",
     expertName: "Wayne Rigsby",
     expertCategory: "Magician  |  Mixologist",
     expertImage: "https://via.placeholder.com/70",
@@ -72,6 +74,8 @@ export const dataArray = [
   },
   {
     name: "Bartender’s Handshake",
+    image:
+      "https://www.dmarge.com/wp-content/uploads/2020/07/gin-martini-cocktail.jpg",
     expertName: "Kimball Cho",
     expertCategory: "Magician  |  Mixologist",
     expertImage: "https://via.placeholder.com/70",
@@ -88,6 +92,8 @@ export const dataArray = [
   },
   {
     name: "Bartender’s Handshake",
+    image:
+      "https://www.dmarge.com/wp-content/uploads/2020/07/gin-martini-cocktail.jpg",
     expertName: "Patrick Jane",
     expertCategory: "Magician  |  Mixologist",
     expertImage: "https://via.placeholder.com/70",
@@ -104,6 +110,8 @@ export const dataArray = [
   },
   {
     name: "Bartender’s Handshake",
+    image:
+      "https://www.dmarge.com/wp-content/uploads/2020/07/gin-martini-cocktail.jpg",
     expertName: "Teresa Lisbon",
     expertCategory: "Magician  |  Mixologist",
     expertImage: "https://via.placeholder.com/70",
@@ -120,6 +128,8 @@ export const dataArray = [
   },
   {
     name: "Bartender’s Handshake",
+    image:
+      "https://www.dmarge.com/wp-content/uploads/2020/07/gin-martini-cocktail.jpg",
     expertName: "Grace Van Pelt",
     expertCategory: "Magician  |  Mixologist",
     expertImage: "https://via.placeholder.com/70",
@@ -133,6 +143,107 @@ export const dataArray = [
       { expertImg: "https://via.placeholder.com/24" },
     ],
     participantAccepted: "3/4 people RSVP’d",
+  },
+];
+
+export const experienceArray = [
+  {
+    Magic: [
+      {
+        name: "Bartender’s Handshake",
+        image:
+          "https://www.dmarge.com/wp-content/uploads/2020/07/gin-martini-cocktail.jpg",
+        expertName: "Patrick Jane",
+        expertCategory: "Magician  |  Mixologist",
+        expertImage: "https://via.placeholder.com/70",
+        duration: "30m",
+        guestAllowed: "7 guests",
+        price: 250,
+        expertImg: "https://via.placeholder.com/24",
+        participants: [
+          { expertImg: "https://via.placeholder.com/24" },
+          { expertImg: "https://via.placeholder.com/24" },
+          { expertImg: "https://via.placeholder.com/24" },
+        ],
+        participantAccepted: "3/4 people RSVP’d",
+      },
+      {
+        name: "Bartender’s Handshake",
+        image:
+          "https://www.dmarge.com/wp-content/uploads/2020/07/gin-martini-cocktail.jpg",
+        expertName: "Teresa Lisbon",
+        expertCategory: "Magician  |  Mixologist",
+        expertImage: "https://via.placeholder.com/70",
+        duration: "30m",
+        guestAllowed: "4 guests",
+        price: 70,
+        expertImg: "https://via.placeholder.com/24",
+        participants: [
+          { expertImg: "https://via.placeholder.com/24" },
+          { expertImg: "https://via.placeholder.com/24" },
+          { expertImg: "https://via.placeholder.com/24" },
+        ],
+        participantAccepted: "3/4 people RSVP’d",
+      },
+      {
+        name: "Bartender’s Handshake",
+        image:
+          "https://www.dmarge.com/wp-content/uploads/2020/07/gin-martini-cocktail.jpg",
+        expertName: "Grace Van Pelt",
+        expertCategory: "Magician  |  Mixologist",
+        expertImage: "https://via.placeholder.com/70",
+        duration: "30m",
+        guestAllowed: "2 guests",
+        price: 40,
+        expertImg: "https://via.placeholder.com/24",
+        participants: [
+          { expertImg: "https://via.placeholder.com/24" },
+          { expertImg: "https://via.placeholder.com/24" },
+          { expertImg: "https://via.placeholder.com/24" },
+        ],
+        participantAccepted: "3/4 people RSVP’d",
+      },
+    ],
+  },
+  {
+    Food_Wine: [
+      {
+        name: "Bartender’s Handshake",
+        image:
+          "https://www.dmarge.com/wp-content/uploads/2020/07/gin-martini-cocktail.jpg",
+        expertName: "Teresa Lisbon",
+        expertCategory: "Magician  |  Mixologist",
+        expertImage: "https://via.placeholder.com/70",
+        duration: "30m",
+        guestAllowed: "4 guests",
+        price: 70,
+        expertImg: "https://via.placeholder.com/24",
+        participants: [
+          { expertImg: "https://via.placeholder.com/24" },
+          { expertImg: "https://via.placeholder.com/24" },
+          { expertImg: "https://via.placeholder.com/24" },
+        ],
+        participantAccepted: "3/4 people RSVP’d",
+      },
+      {
+        name: "Bartender’s Handshake",
+        image:
+          "https://www.dmarge.com/wp-content/uploads/2020/07/gin-martini-cocktail.jpg",
+        expertName: "Grace Van Pelt",
+        expertCategory: "Magician  |  Mixologist",
+        expertImage: "https://via.placeholder.com/70",
+        duration: "30m",
+        guestAllowed: "2 guests",
+        price: 40,
+        expertImg: "https://via.placeholder.com/24",
+        participants: [
+          { expertImg: "https://via.placeholder.com/24" },
+          { expertImg: "https://via.placeholder.com/24" },
+          { expertImg: "https://via.placeholder.com/24" },
+        ],
+        participantAccepted: "3/4 people RSVP’d",
+      },
+    ],
   },
 ];
 

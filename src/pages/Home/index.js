@@ -7,6 +7,8 @@ import {
   ChevronRight,
   Button,
   EditIcon,
+  Masonry,
+  Modal,
 } from "../../components";
 import { theme } from "../../theme";
 import {
@@ -31,7 +33,15 @@ export default function Home() {
   const { width } = useWindowDimensions();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [iconSize, setIconSize] = useState("14px");
-
+  const masonryOptions = {
+    transitionDuration: 0,
+  };
+  const breakpointColumnsObj = {
+    default: 4,
+    1100: 3,
+    700: 2,
+    500: 1,
+  };
   useEffect(() => {
     if (width > 769) {
       setIconSize("24px");
@@ -55,7 +65,7 @@ export default function Home() {
           <NavLink to="/login" className="buttonWrapper">
             <Button className="loginBtn">Log in</Button>
           </NavLink>
-          <p class="separatorNote">Already have an account?</p>
+          <p className="separatorNote">Already have an account?</p>
           <NavLink to="/signup" className="buttonWrapper">
             <Button
               backgroundColor={theme.colors.secondaryColor}
@@ -79,34 +89,26 @@ export default function Home() {
           </h3>
           <ChevronDown size={iconSize} color={theme.colors.textColor4} />
         </Flex>
-        <GridView>
+        <Masonry
+          breakpointCols={breakpointColumnsObj}
+          className="my-masonry-grid"
+          columnClassName="my-masonry-grid_column"
+        >
           {dataArray.map((data, index) => {
-            return (
-              // <CardWrapper key={index}>
-              <Card key={index} type="experience" data={data} />
-              // </CardWrapper>
-            );
+            return <Card key={index} type="experience" data={data} />;
           })}
-        </GridView>
+        </Masonry>
         <Flex
           container
           alignItems="center"
           justifyContent="center"
           padding="1rem 0"
+          margin="0 0 2rem 0"
         >
           <h1 className="explore">Explore more Experiences</h1>
           <ChevronRight size={iconSize} color={theme.colors.textColor} />
         </Flex>
       </GridViewWrapper>
-      {/* <GridView>
-        {dataArray.map((item, index) => {
-          return (
-            <CardWrapper key={index}>
-              <Card type="upcomingExperience" data={data} />
-            </CardWrapper>
-          );
-        })}
-      </GridView> */}
       <GridViewWrapper>
         <Flex
           container
@@ -134,6 +136,7 @@ export default function Home() {
           alignItems="center"
           justifyContent="center"
           padding="1rem 0"
+          margin="0 0 2rem 0"
         >
           <h1 className="explore ">Explore more Experts</h1>
           <ChevronRight size={iconSize} color={theme.colors.textColor} />
@@ -169,6 +172,7 @@ export default function Home() {
           alignItems="center"
           justifyContent="center"
           padding="1rem 0"
+          margin="0 0 2rem 0"
         >
           <h1 className="explore ">Edit Categories</h1>
           <EditIcon size={iconSize} color={theme.colors.textColor} />

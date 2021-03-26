@@ -25,6 +25,7 @@ export const Wrapper = styled.div`
   .signupBtn {
     height: 48px;
     font-size: ${theme.sizes.h8};
+    width: ${({ isOpen }) => isOpen && "90%"};
   }
 
   .redirectToLogin {
@@ -47,6 +48,7 @@ export const Wrapper = styled.div`
       position: relative;
       padding: 0;
       margin-top: 2rem;
+      z-index: 0;
     }
     .redirectToLogin {
       display: none;
