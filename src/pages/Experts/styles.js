@@ -74,6 +74,12 @@ export const GridViewWrapper = styled.div`
     margin-right: 40px;
   }
 
+  .my-masonry-grid_column {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    grid-column-gap: 1rem;
+  }
+
   .my-masonry-grid_column > div {
     margin: 0 0 40px 40px;
   }

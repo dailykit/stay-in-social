@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Flex } from "@dailykit/ui";
 import { Card, CardImage, CardBody } from "./styles.js";
 
@@ -15,7 +16,9 @@ export default function ExpertCard({ cardDetails }) {
           <p className="experience">
             {cardDetails.expertTotalExperience} Experiences
           </p>
-          <button className="viewProfileBtn">View Profile</button>
+          <Link to={`/experts/${cardDetails.expertId}`}>
+            <button className="viewProfileBtn">View Profile</button>
+          </Link>
         </Flex>
       </CardBody>
     </Card>

@@ -40,7 +40,7 @@ export const CardBody = styled.div`
   .book-exp {
     text-align: center;
     font-weight: 800;
-    font-size: ${theme.sizes.h7};
+    font-size: ${theme.sizes.h8};
     color: ${theme.colors.tertiaryColor};
     text-transform: uppercase;
     cursor: pointer;
