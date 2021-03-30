@@ -9,6 +9,7 @@ import {
   Signup,
   CategoryTag,
   Expert,
+  Experience,
 } from "../../pages";
 
 export default function Main() {
@@ -17,6 +18,7 @@ export default function Main() {
       <Switch>
         <Route path="/" component={Home} exact />
         <Route path="/experiences" component={Experiences} exact />
+        <Route path="/experiences/:experienceId" component={Experience} exact />
         <Route path="/experts" component={Experts} exact />
         <Route path="/experts/:expertId" component={Expert} exact />
         <Route path="/login" component={Login} exact />

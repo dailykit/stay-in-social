@@ -1,12 +1,14 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import { Flex } from "@dailykit/ui";
 import { Card, CardImage, CardBody } from "./styles.js";
 import { Clock } from "../../Icons";
 import { theme } from "../../../theme.js";
 
 export default function ExperienceCard({ cardDetails }) {
+  const history = useHistory();
   return (
-    <Card>
+    <Card onClick={() => history.push("/experiences/1")}>
       <CardImage>
         <img src={cardDetails.image} alt="card-img" />
       </CardImage>

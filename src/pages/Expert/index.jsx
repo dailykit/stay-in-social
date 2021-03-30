@@ -5,7 +5,13 @@ import { Wrapper, GridViewWrapper } from "./styles";
 import { expertArray, dataArray } from "../../fakeData.js";
 import { useWindowDimensions } from "../../utils";
 import { theme } from "../../theme.js";
-import { ChevronDown, ChevronRight, Card, Masonry } from "../../components";
+import {
+  ChevronDown,
+  ChevronRight,
+  Card,
+  Masonry,
+  AboutExpert,
+} from "../../components";
 
 export default function Expert() {
   const { expertId } = useParams();
@@ -27,17 +33,7 @@ export default function Expert() {
   }, [width]);
   return (
     <Wrapper>
-      <div className="expert">
-        <img
-          className="expertImg"
-          src={expert.image}
-          alt={`${expert.name}-img`}
-        />
-        <h1 className="expertName">{expert.name}</h1>
-        <p className="expertCategory">{expert.category}</p>
-        <p className="expertDesc">{expert.description}</p>
-        <button className="readMore">Read More</button>
-      </div>
+      <AboutExpert expert={expert} />
       <GridViewWrapper>
         <Flex
           container
@@ -58,16 +54,6 @@ export default function Expert() {
             return <Card key={index} type="experience" data={data} />;
           })}
         </Masonry>
-        <Flex
-          container
-          alignItems="center"
-          justifyContent="center"
-          padding="1rem 0"
-          margin="0 0 2rem 0"
-        >
-          <h1 className="explore">Explore more Experiences</h1>
-          <ChevronRight size={iconSize} color={theme.colors.textColor} />
-        </Flex>
       </GridViewWrapper>
     </Wrapper>
   );
