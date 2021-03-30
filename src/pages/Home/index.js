@@ -33,9 +33,6 @@ export default function Home() {
   const { width } = useWindowDimensions();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [iconSize, setIconSize] = useState("14px");
-  const masonryOptions = {
-    transitionDuration: 0,
-  };
   const breakpointColumnsObj = {
     default: 4,
     1100: 3,
