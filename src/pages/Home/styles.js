@@ -25,7 +25,7 @@ export const CardWrapper = styled.div`
   margin: 0 auto;
 `;
 export const CardWrapperForExpert = styled.div`
-  margin: 0 1rem 1rem 1rem;
+  padding: 1rem;
 `;
 
 export const GridViewWrapper = styled.div`

@@ -6,24 +6,34 @@ export const StyledWrapper = styled.div`
   width: 100%;
   height: 100%;
   overflow: auto;
-  .heading {
-    font-size: ${theme.sizes.h1};
-    color: ${theme.colors.textColor4};
-    font-weight: 400;
-    text-align: center;
-    margin-bottom: 80px;
-  }
-  .experienceHeading {
-    font-size: ${theme.sizes.h8};
-    color: ${theme.colors.textColor4};
-    font-weight: 400;
-    margin-left: 40px;
-    margin-bottom: 20px;
-  }
-  @media (min-width: 769px) {
-    .experienceHeading {
-      margin-left: 40px;
+  .centerDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .heading {
       font-size: ${theme.sizes.h1};
+      color: ${theme.colors.textColor4};
+      font-weight: 400;
+      margin-bottom: 80px;
+    }
+    .customInput {
+      width: 80%;
+      color: ${theme.colors.textColor2};
+      margin-bottom: 48px;
+      box-shadow: -5px 5px 10px rgba(13, 15, 19, 0.2),
+        5px -5px 10px rgba(13, 15, 19, 0.2),
+        -5px -5px 10px rgba(53, 59, 77, 0.9), 5px 5px 13px rgba(13, 15, 19, 0.9),
+        inset 1px 1px 2px rgba(53, 59, 77, 0.3),
+        inset -1px -1px 2px rgba(13, 15, 19, 0.5);
+    }
+    .customBtn {
+      height: 48px;
+      font-size: ${theme.sizes.h8};
+      width: auto;
+      padding: 0 1rem;
+      margin: 0 0 1rem 1rem;
+      text-transform: none;
+      font-weight: 500;
     }
   }
 `;
@@ -33,11 +43,18 @@ export const CardWrapper = styled.div`
   margin: 0 auto;
 `;
 export const CardWrapperForExpert = styled.div`
-  margin: 0 1rem 1rem 1rem;
+  padding: 1rem;
 `;
 
 export const GridViewWrapper = styled.div`
   margin-bottom: 168px;
+  .experienceHeading {
+    font-size: ${theme.sizes.h2};
+    color: ${theme.colors.textColor4};
+    font-weight: 400;
+    margin-left: 40px;
+    margin-bottom: 20px;
+  }
   .explore {
     text-align: center;
     font-size: ${theme.sizes.h4};
@@ -50,8 +67,8 @@ export const GridViewWrapper = styled.div`
     color: ${theme.colors.textColor2};
   }
   .my-masonry-grid {
-    display: -webkit-box; /* Not needed if autoprefixing */
-    display: -ms-flexbox; /* Not needed if autoprefixing */
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: auto;
     margin-right: 40px;
@@ -59,6 +76,10 @@ export const GridViewWrapper = styled.div`
 
   .my-masonry-grid_column > div {
     margin: 0 0 40px 40px;
+  }
+  .emptyCard {
+    width: 100%;
+    padding: 1rem;
   }
 
   @media (min-width: 769px) {
@@ -68,6 +89,10 @@ export const GridViewWrapper = styled.div`
       color: ${theme.colors.textColor};
       font-weight: 800;
     }
+    .experienceHeading {
+      margin-left: 40px;
+      font-size: ${theme.sizes.h1};
+    }
   }
   @media (max-width: 800px) {
     .my-masonry-grid {
@@ -75,6 +100,9 @@ export const GridViewWrapper = styled.div`
     }
     .my-masonry-grid_column > div {
       margin: 0 0 1rem 1rem;
+    }
+    .emptyCard {
+      margin-right: 1rem;
     }
   }
 `;

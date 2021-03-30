@@ -60,10 +60,10 @@ export default function Header() {
           </Button>
         </li>
       </ul>
-      <Modal isOpen={loginModalOpen} isClose={closeModal}>
+      <Modal isOpen={loginModalOpen} close={closeModal}>
         <Login isOpen={loginModalOpen} authBtnClassName="auth-btn" />
       </Modal>
-      <Modal isOpen={signupModalOpen} isClose={closeModal}>
+      <Modal isOpen={signupModalOpen} close={closeModal}>
         <Signup isOpen={signupModalOpen} authBtnClassName="auth-btn" />
       </Modal>
     </NavBar>

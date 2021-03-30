@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { theme } from "../../../theme";
 
 export const Card = styled.div`
-  width: 142px;
-  height: 158px;
+  width: 180px;
+  height: 200px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -36,12 +36,29 @@ export const CardBody = styled.div`
     text-align: center;
     font-weight: 500;
     font-size: ${theme.sizes.h9};
-    margin: 8px 0;
+    margin: 2px 0;
   }
   .category {
     text-align: center;
     font-weight: 400;
     font-size: ${theme.sizes.h7};
+  }
+  .experience {
+    text-align: center;
+    font-weight: 400;
+    font-size: ${theme.sizes.h7};
+    font-style: italic;
+    margin: 8px 0;
+  }
+  .viewProfileBtn {
+    border: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: ${theme.sizes.h6};
+    color: ${theme.colors.textColor};
+    background: none;
+    cursor: pointer;
   }
   @media (min-width: 769px) {
     .exp-name {
