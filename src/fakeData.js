@@ -324,3 +324,22 @@ export const expertArray = [
     description: `"When is Alex going to find a real job?", my aunt said to my mom after I fled NYC for the Vegas strip after college. I graduated with a degree in music, tried what my family referred to as a "real job", and ran away so fast from that life that I didn't have the time to look back...`,
   },
 ];
+
+export const bookingTimeSlot = [
+  {
+    date: "May 20,2021",
+    slots: ["9:00am", "11:00am"],
+  },
+  {
+    date: "May 21,2021",
+    slots: ["9:00am"],
+  },
+  {
+    date: "May 22,2021",
+    slots: ["9:00am", "11:00am"],
+  },
+  {
+    date: "May 23,2021",
+    slots: ["11:00am"],
+  },
+];

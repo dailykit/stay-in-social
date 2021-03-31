@@ -4,7 +4,7 @@ import { FooterWrapper } from "./styles";
 
 export default function Footer() {
   return (
-    <FooterWrapper>
+    <FooterWrapper id="main-footer">
       <ul className="nav-list">
         <li>
           <NavLink to="/" exact>

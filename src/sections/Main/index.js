@@ -10,6 +10,7 @@ import {
   CategoryTag,
   Expert,
   Experience,
+  Booking,
 } from "../../pages";
 
 export default function Main() {
@@ -24,6 +25,7 @@ export default function Main() {
         <Route path="/login" component={Login} exact />
         <Route path="/signup" component={Signup} exact />
         <Route path="/categoryTag" component={CategoryTag} exact />
+        <Route path="/booking" component={Booking} exact />
       </Switch>
     </MainWrapper>
   );

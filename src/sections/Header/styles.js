@@ -10,6 +10,7 @@ export const NavBar = styled.nav`
   align-items: center;
   padding: 1rem 2rem;
   justify-content: space-between;
+  background: ${theme.colors.mainBackground};
   @media (max-width: 768px) {
     display: none;
   }

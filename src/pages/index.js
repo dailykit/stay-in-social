@@ -6,6 +6,7 @@ import Expert from "./Expert";
 import Login from "./Login";
 import Signup from "./Signup";
 import CategoryTag from "./CategoryTag";
+import Booking from "./Booking";
 
 export {
   Home,
@@ -16,4 +17,5 @@ export {
   Login,
   Signup,
   CategoryTag,
+  Booking,
 };

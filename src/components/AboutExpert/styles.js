@@ -31,7 +31,7 @@ export const Wrapper = styled.div`
     margin-bottom: 43px;
   }
   .expertDesc {
-    text-align: center;
+    text-align: justify;
     font-size: ${theme.sizes.h6};
     color: ${theme.colors.textColor4};
     font-weight: 400;

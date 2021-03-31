@@ -8,6 +8,7 @@ export const Card = styled.div`
   background: ${theme.colors.mainBackground};
   box-shadow: 0px 8px 12px 2px rgba(0, 0, 0, 0.32);
   border-radius: 16px;
+  cursor: pointer;
 `;
 
 export const CardImage = styled.div`
@@ -28,6 +29,7 @@ export const CardBody = styled.div`
     margin: 4px 0 4px 0;
     font-size: ${theme.sizes.h8};
     font-weight: 500;
+    text-align: left;
   }
   .exp-info {
     font-weight: 800;

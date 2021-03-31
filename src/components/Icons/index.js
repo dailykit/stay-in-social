@@ -153,3 +153,18 @@ export const SearchIcon = ({ size = 24, color = "#000000" }) => (
     <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
   </svg>
 );
+export const CalendarIcon = ({ size = 24, color = "#000000" }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 80 88"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M67.5 8V8.5H68H72C76.1239 8.5 79.5 11.8761 79.5 16V80C79.5 84.1239 76.1239 87.5 72 87.5H8C3.87614 87.5 0.5 84.1239 0.5 80V16C0.5 11.8761 3.87614 8.5 8 8.5H12H12.5V8V0.5H19.5V8V8.5H20H60H60.5V8V0.5H67.5V8ZM72 80.5H72.5V80V28V27.5H72H8H7.5V28V80V80.5H8H72Z"
+      fill={color}
+      stroke={color}
+    />
+  </svg>
+);
