@@ -57,7 +57,7 @@ export default function Booking() {
           return <AvailableDate date={timeslot.date} slots={timeslot.slots} />;
         })}
       </div>
-      <div className="footerBtnWrapper">
+      <div className="footerNextBtnWrapper">
         <Button className="nextBtn">Next</Button>
       </div>
     </Wrapper>

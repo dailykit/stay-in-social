@@ -33,7 +33,7 @@ export const Wrapper = styled.div`
     border-radius: 4px;
     padding: 8px;
   }
-  .footerBtnWrapper {
+  .footerNextBtnWrapper {
     display: flex;
     align-items: center;
     position: absolute;
