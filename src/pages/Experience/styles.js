@@ -16,7 +16,8 @@ export const StyledWrapper = styled.div`
   }
   > aside {
     position: relative;
-    height: 725px;
+    height: 710px;
+    overflow: auto;
     width: 450px;
     display: flex;
     grid-area: aside;

@@ -14,6 +14,9 @@ import {
   Card,
   ScrollToTop,
   Button,
+  Goodies,
+  GoodiesWrapper,
+  Ingredients,
 } from "../../components";
 import { theme } from "../../theme";
 import { useWindowDimensions } from "../../utils";
@@ -150,69 +153,14 @@ export default function Experience() {
           <h1 className="sub-heading">About Expert</h1>
           <AboutExpert expert={expert} />
         </section>
-        <section id="section-3">
-          <h1 className="sub-heading">Supplies & Ingredients</h1>
-          <Flex
-            container
-            alignItems="flex-end"
-            justifyContent="space-around"
-            margin="0 0 42px 0"
-          >
-            <div className="goodiesImgWrapper">
-              <img className="goodiesImg" src={shakerImg} alt="shaker-img" />
-              <p className="goodieName">Shaker</p>
-            </div>
-            <div className="goodiesImgWrapper">
-              <img className="goodiesImg" src={jiggerImg} alt="jigger-img" />
-              <p className="goodieName">Jigger</p>
-            </div>
-            <div className="goodiesImgWrapper">
-              <img
-                className="goodiesImg"
-                src={limeJuiceImg}
-                alt="lime-juice-img"
-              />
-              <p className="goodieName">Lime Juice</p>
-            </div>
-          </Flex>
-          <Flex
-            container
-            flexDirection="column"
-            alignItems="center"
-            justifyContent="center"
-            margin="0 0 68px 0"
-          >
-            <h3 className="subsub-heading">OR we’ll send you a kit</h3>
-            <ChevronDown size={iconSize} color={theme.colors.textColor4} />
-          </Flex>
-        </section>
-        <section id="section-4">
-          <h1 className="sub-heading">Goodies in your Kit</h1>
-          <img className="box-open-img" src={openBoxImg} alt="open-box-img" />
-          <Flex
-            container
-            alignItems="flex-end"
-            justifyContent="space-around"
-            margin="0 0 42px 0"
-          >
-            <div className="goodiesImgWrapper">
-              <img className="goodiesImg" src={shakerImg} alt="shaker-img" />
-              <p className="goodieName">StayIn Branded 16oz shaker</p>
-            </div>
-            <div className="goodiesImgWrapper">
-              <img className="goodiesImg" src={jiggerImg} alt="jigger-img" />
-              <p className="goodieName">StayIn Branded Jigger</p>
-            </div>
-            <div className="goodiesImgWrapper">
-              <img
-                className="goodiesImg"
-                src={limeJuiceImg}
-                alt="lime-juice-img"
-              />
-              <p className="goodieName">Lime Juice</p>
-            </div>
-          </Flex>
-        </section>
+        <div id="section-3">
+          <GoodiesWrapper>
+            <Ingredients title="Supplies & Ingredients" />
+          </GoodiesWrapper>
+        </div>
+        <div id="section-4">
+          <Goodies title="Goodies in your Kit" />
+        </div>
         <section id="section-5">
           <h1 className="sub-heading">How to Book & Participate</h1>
           <h3 className="subsub-heading">
@@ -232,11 +180,6 @@ export default function Experience() {
             to download anything!
           </p>
         </section>
-        {/* {width < 769 && (
-          <section id="section-6">
-            <Booking />
-          </section>
-        )} */}
         <section id="section-7">
           <GridViewWrapper>
             <Flex
@@ -261,6 +204,7 @@ export default function Experience() {
           </GridViewWrapper>
         </section>
       </Wrapper>
+
       {width > 769 && (
         <aside>
           <Booking />

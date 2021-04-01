@@ -19,3 +19,18 @@ export const StyledButton = styled.button`
   font-weight: 800;
   cursor: pointer;
 `;
+
+export const CircularButton = styled.button`
+  width: ${({ customWidth }) => customWidth || "44px"};
+  height: ${({ customHeight }) => customHeight || "44px"};
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+  background: #212530;
+  box-shadow: -3px 3px 6px rgba(21, 23, 30, 0.2),
+    3px -3px 6px rgba(21, 23, 30, 0.2), -3px -3px 6px rgba(45, 51, 66, 0.9),
+    3px 3px 8px rgba(21, 23, 30, 0.9), inset 1px 1px 2px rgba(45, 51, 66, 0.3),
+    inset -1px -1px 2px rgba(21, 23, 30, 0.5);
+  border: 1px solid #212530;
+  border-radius: 50%;
+`;
