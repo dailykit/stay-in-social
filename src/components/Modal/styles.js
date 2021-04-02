@@ -13,6 +13,7 @@ export const ModalDiv = styled.div`
   transform: ${({ isOpen }) =>
     isOpen ? "translate3d(0%, 0px, 0px)" : "translate3d(200%, 0px, 0px)"};
   transition: all 1s ease 0s;
+
   .modal-header {
     padding: 2rem 2rem 0 2rem;
     .closeBtn {
@@ -30,5 +31,9 @@ export const ModalDiv = styled.div`
       padding: 8px 0;
       cursor: pointer;
     }
+  }
+  .modal-body {
+    height: 100%;
+    overflow: auto;
   }
 `;

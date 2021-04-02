@@ -1,6 +1,29 @@
-import React from "react";
-import { Booking } from "../../components";
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+import { Wrap } from "./styles";
+import { Booking, BackDrop } from "../../components";
+import celebration from "../../assets/images/celebration.png";
 
 export default function BookingPage() {
-  return <Booking />;
+  const history = useHistory();
+  const [isCelebrating, setIsCelebrating] = useState(false);
+  const stopCelebration = () => {
+    setTimeout(setIsCelebrating(false), 2000);
+    history.push("/");
+  };
+  const startCelebration = () => {
+    setIsCelebrating(true);
+    setTimeout(stopCelebration, 2000);
+  };
+  return (
+    <Wrap>
+      <BackDrop show={isCelebrating} close={stopCelebration}>
+        <div class="booking-done">
+          <img src={celebration} alt="celebration-emoji" />
+          <p>Your're BOOKED!</p>
+        </div>
+      </BackDrop>
+      <Booking onBooking={startCelebration} />
+    </Wrap>
+  );
 }

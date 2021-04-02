@@ -6,6 +6,8 @@ import AboutExpert from "./AboutExpert";
 import Booking from "./Booking";
 import AvailableDate from "./AvailableDate";
 import ScrollToTop from "./ScrollToTop";
+import BackDrop from "./BackDrop";
+import Error from "./Error";
 
 export {
   Button,
@@ -16,6 +18,8 @@ export {
   Booking,
   AvailableDate,
   ScrollToTop,
+  BackDrop,
+  Error,
 };
 export * from "./Icons";
 export * from "./Card";

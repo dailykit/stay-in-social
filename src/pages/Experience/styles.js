@@ -10,7 +10,7 @@ export const StyledWrapper = styled.div`
   > main {
     grid-area: main;
     overflow-y: auto;
-    height: calc(100vh - 64px);
+    height: calc(100vh - 80px);
     width: 100%;
     padding: 1rem;
   }
@@ -266,6 +266,26 @@ export const GridViewWrapper = styled.div`
     }
     .my-masonry-grid_column > div {
       margin: 0 0 1rem 1rem;
+    }
+  }
+`;
+
+export const Wrap = styled.div`
+  .booking-done {
+    margin-top: 4rem;
+    padding: 1rem;
+    img {
+      width: 94px;
+      height: 94px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    p {
+      font-size: ${theme.sizes.h3};
+      font-weight: 700;
+      color: ${theme.colors.textColor4};
+      text-align: center;
     }
   }
 `;

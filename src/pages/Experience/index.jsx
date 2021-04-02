@@ -1,8 +1,15 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import { NavHashLink as Link } from "react-router-hash-link";
 import ReactPlayer from "react-player";
 import { Flex } from "@dailykit/ui";
-import { Wrapper, TabWrapper, GridViewWrapper, StyledWrapper } from "./styles";
+import {
+  Wrapper,
+  Wrap,
+  TabWrapper,
+  GridViewWrapper,
+  StyledWrapper,
+} from "./styles";
 import {
   ChevronRight,
   ChevronDown,
@@ -17,14 +24,12 @@ import {
   Goodies,
   GoodiesWrapper,
   Ingredients,
+  BackDrop,
 } from "../../components";
 import { theme } from "../../theme";
 import { useWindowDimensions } from "../../utils";
 import { expertArray, dataArray } from "../../fakeData";
-import shakerImg from "../../assets/images/shaker.jpg";
-import jiggerImg from "../../assets/images/jigger.jpg";
-import limeJuiceImg from "../../assets/images/lime_juice.jpg";
-import openBoxImg from "../../assets/images/Box_Open.jpg";
+import celebration from "../../assets/images/celebration.png";
 
 export default function Experience() {
   const expert = expertArray.find((exp) => exp.id === "pat-5");
@@ -36,6 +41,16 @@ export default function Experience() {
     1200: 1,
     700: 1,
     500: 1,
+  };
+  const history = useHistory();
+  const [isCelebrating, setIsCelebrating] = useState(false);
+  const stopCelebration = () => {
+    setTimeout(setIsCelebrating(false), 2000);
+    history.push("/");
+  };
+  const startCelebration = () => {
+    setIsCelebrating(true);
+    setTimeout(stopCelebration, 2000);
   };
   useEffect(() => {
     if (width > 769) {
@@ -207,7 +222,15 @@ export default function Experience() {
 
       {width > 769 && (
         <aside>
-          <Booking />
+          <Wrap>
+            <BackDrop show={isCelebrating} close={stopCelebration}>
+              <div class="booking-done">
+                <img src={celebration} alt="celebration-emoji" />
+                <p>Your're BOOKED!</p>
+              </div>
+            </BackDrop>
+            <Booking onBooking={startCelebration} />
+          </Wrap>
         </aside>
       )}
       <div class="footerBtnWrapper">

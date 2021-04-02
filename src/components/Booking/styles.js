@@ -5,6 +5,20 @@ export const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   margin-bottom: 2rem;
+  .modal-content-div {
+    font-size: ${theme.sizes.h8};
+    font-weight: 600;
+    color: ${theme.colors.textColor4};
+    background: ${theme.colors.mainBackground};
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 1rem;
+    margin: 1rem;
+    small {
+      font-size: ${theme.sizes.h12};
+    }
+  }
   .top-heading {
     font-size: ${theme.sizes.h3};
     font-weight: 400;
@@ -26,6 +40,24 @@ export const Wrapper = styled.div`
     height: 48px;
     text-transform: none;
     font-weight: 600;
+  }
+  .customAddressBtn {
+    height: 38px;
+    text-transform: none;
+    font-weight: 600;
+    width: auto;
+    padding: 0 1rem;
+  }
+  .customAddressInput {
+    margin-bottom: 1rem;
+    color: ${theme.colors.textColor4};
+  }
+  .address-head {
+    font-size: ${theme.sizes.h6};
+    font-weight: 500;
+    color: ${theme.colors.textColor4};
+    margin: 1rem;
+    text-align: left;
   }
   .showAll {
     font-size: ${theme.sizes.h7};
@@ -84,6 +116,16 @@ export const Wrapper = styled.div`
     font-size: ${theme.sizes.h4};
     font-weight: normal;
   }
+  .normal-p {
+    margin: 0 1rem;
+    font-size: ${theme.sizes.h6};
+    color: ${theme.colors.textColor4};
+    line-height: ${theme.sizes.h3};
+  }
+  .change-head {
+    color: ${theme.colors.textColor};
+    cursor: pointer;
+  }
 
   @media (min-width: 769px) {
     .footerNextBtnWrapper {
@@ -113,6 +155,7 @@ export const Wrap = styled.div`
     font-size: ${theme.sizes.h6};
     font-weight: 700;
     color: ${theme.colors.textColor};
+    cursor: pointer;
   }
   .counter-wrap {
     background: ${theme.colors.mainBackground};
@@ -168,7 +211,7 @@ export const Wrap = styled.div`
     }
   }
   .counter-update {
-    padding: 1rem 0 1rem 1rem;
+    padding: 1rem;
     margin: 28px 0;
     background: ${theme.colors.mainBackground};
     box-shadow: -1px 1px 2px rgba(27, 30, 39, 0.2),
@@ -194,7 +237,7 @@ export const Wrap = styled.div`
   }
   .update-address {
     border: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 1rem;
+    padding: 1rem 0;
     .change-head {
       color: ${theme.colors.textColor};
       cursor: pointer;
@@ -268,5 +311,22 @@ export const Wrap = styled.div`
     color: ${theme.colors.textColor4};
     margin: 0 1rem;
     margin-bottom: 8rem;
+  }
+  .add-address-p {
+    font-size: ${theme.sizes.h7};
+    font-weight: 500;
+    color: ${theme.colors.textColor4};
+    margin: 2rem 1rem 1rem;
+  }
+  .address-div {
+    font-size: ${theme.sizes.h7};
+    font-weight: 500;
+    color: ${theme.colors.textColor4};
+    background: ${theme.colors.mainBackground};
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 1rem;
+    margin: 1rem 0;
   }
 `;

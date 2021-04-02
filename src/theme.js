@@ -3,6 +3,8 @@ export const theme = {
     primaryColor: "linear-gradient(49.18deg, #F44D4D 0.74%, #EB98AD 102.71%)",
     secondaryColor: "linear-gradient(228.17deg, #7AB6D3 0.03%, #294460 95.55%)",
     tertiaryColor: "#F44D4D",
+    backDropColor:
+      "linear-gradient(135deg, rgba(35, 39, 50, 0.5) 0%, rgba(31, 35, 46, 0.5) 100%);",
     mainBackground: "#212530",
     textColor: "#7AB6D3",
     textColor2: "#fafafa",
@@ -26,5 +28,7 @@ export const theme = {
     h8: "16px",
     h9: "18px",
     h10: "68px",
+    h11: "10px",
+    h12: "8px",
   },
 };
