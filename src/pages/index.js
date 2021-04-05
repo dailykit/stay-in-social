@@ -8,6 +8,8 @@ import Signup from "./Signup";
 import CategoryTag from "./CategoryTag";
 import Booking from "./Booking";
 import Invite from "./Invite";
+import InvitePoll from "./InvitePoll";
+import SendPoll from "./SendPoll";
 
 export {
   Home,
@@ -20,4 +22,6 @@ export {
   CategoryTag,
   Booking,
   Invite,
+  InvitePoll,
+  SendPoll,
 };

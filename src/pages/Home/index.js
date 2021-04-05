@@ -92,7 +92,14 @@ export default function Home() {
           columnClassName="my-masonry-grid_column"
         >
           {dataArray.map((data, index) => {
-            return <Card key={index} type="experience" data={data} />;
+            return (
+              <Card
+                boxShadow="true"
+                key={index}
+                type="experience"
+                data={data}
+              />
+            );
           })}
         </Masonry>
         <Flex

@@ -16,12 +16,16 @@ export const Card = styled.div`
 
 export const CardImage = styled.div`
   width: 100%;
-  height: 50%;
+  height: 120px;
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 8px;
+  }
+
+  @media (min-width: 769px) {
+    height: 400px;
   }
 `;
 
@@ -34,22 +38,7 @@ export const CardBody = styled.div`
     font-weight: 500;
     text-align: left;
   }
-  .exp-info {
-    font-weight: 800;
-    font-size: ${theme.sizes.h7};
-    span {
-      font-weight: 400;
-      font-size: ${theme.sizes.h7};
-    }
-  }
-  .book-exp {
-    text-align: center;
-    font-weight: 800;
-    font-size: ${theme.sizes.h8};
-    color: ${theme.colors.tertiaryColor};
-    text-transform: uppercase;
-    cursor: pointer;
-  }
+
   .duration {
     display: flex;
     align-items: center;
@@ -58,35 +47,44 @@ export const CardBody = styled.div`
       font-size: ${theme.sizes.h7};
     }
   }
-  .expertImgDiv {
-    width: 14px;
-    height: 14px;
-  }
-  .expert-img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50px;
+  .expert-info-wrapper {
+    display: flex;
+    align-items: center;
+    .expertImgDiv {
+      width: 14px;
+      height: 14px;
+      height: 100%;
+    }
+    .expert-name {
+      font-size: ${theme.sizes.h6};
+      font-weight: 500;
+      color: ${theme.colors.textColor4};
+      margin-left: 8px;
+    }
+    .expert-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50px;
+    }
   }
   @media (min-width: 769px) {
     .exp-name {
       margin: 1rem 0 0.5rem 0;
       font-size: ${theme.sizes.h4};
     }
-    .exp-info {
+    .expert-name {
       font-size: ${theme.sizes.h8};
-      font-weight: 600;
+    }
+    .expert-info-wrapper {
+      .expertImgDiv {
+        width: 24px;
+        height: 24px;
+      }
     }
     .duration {
       span {
         font-size: ${theme.sizes.h8};
       }
-    }
-    .book-exp {
-      font-size: ${theme.sizes.h8};
-    }
-    .expertImgDiv {
-      width: 24px;
-      height: 24px;
     }
   }
 `;

@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import { Flex } from "@dailykit/ui";
 import { Card, CardImage, CardBody } from "./styles.js";
 
-export default function ExpertCard({ cardDetails }) {
+export default function ExpertCard({ cardDetails, ...props }) {
   return (
-    <Card>
+    <Card {...props}>
       <CardImage>
         <img src={cardDetails.expertImage} alt="card-img" />
       </CardImage>

@@ -52,6 +52,9 @@ export const StyledWrapper = styled.div`
     height: 48px;
     width: 100%;
   }
+  .modal-content {
+    padding: 1rem;
+  }
 `;
 
 export const Wrapper = styled.main`
@@ -172,6 +175,12 @@ export const TabWrapper = styled.div`
       z-index: 10;
       margin: 0 -8px;
       top: 0;
+    }
+    .customPollBtn {
+      width: auto;
+      background: ${theme.colors.secondaryColor};
+      padding: 0 8px;
+      height: 30px;
     }
     .scrollLeftBtn {
       left: 8px;

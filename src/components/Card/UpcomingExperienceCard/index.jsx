@@ -4,9 +4,9 @@ import { Card, CardImage, CardBody } from "./styles.js";
 import { Clock, ChevronRight } from "../../Icons";
 import { theme } from "../../../theme.js";
 
-export default function UpcomingExperienceCard({ cardDetails }) {
+export default function UpcomingExperienceCard({ cardDetails, ...props }) {
   return (
-    <Card>
+    <Card {...props}>
       <h1 className="card-heading">May 4, 2019 | Starts at 9:30am</h1>
       <CardImage>
         <img

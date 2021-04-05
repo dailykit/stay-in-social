@@ -24,12 +24,14 @@ import {
   GoodiesWrapper,
   Ingredients,
   BackDrop,
+  Modal,
 } from "../../components";
 import Booking from "../Booking";
 import { theme } from "../../theme";
 import { useWindowDimensions } from "../../utils";
 import { expertArray, dataArray } from "../../fakeData";
 import celebration from "../../assets/images/celebration.png";
+import SendPoll from "../SendPoll";
 
 export default function Experience() {
   const expert = expertArray.find((exp) => exp.id === "pat-5");
@@ -44,6 +46,7 @@ export default function Experience() {
   };
   const history = useHistory();
   const [isCelebrating, setIsCelebrating] = useState(false);
+  const [sideDrawer, setSideDrawer] = useState(false);
   const stopCelebration = () => {
     setTimeout(setIsCelebrating(false), 2000);
     history.push("/");
@@ -91,63 +94,73 @@ export default function Experience() {
         </Flex>
         <TabWrapper>
           <div className="tabOptions">
-            <span
-              className="scrollBtn scrollLeftBtn"
-              onClick={scrollLeftHandler}
-            >
-              <ChevronLeft
-                size={theme.sizes.h7}
-                color={theme.colors.textColor2}
-              />
-            </span>
-            <div className="tab" id="experienceTab">
-              <ul>
-                <li>
-                  <Link activeClassName="activeHash" smooth to="#section-1">
-                    About Experience
-                  </Link>
-                </li>
-                <li>
-                  <Link activeClassName="activeHash" smooth to="#section-2">
-                    About the Expert
-                  </Link>
-                </li>
-                <li>
-                  <Link activeClassName="activeHash" smooth to="#section-3">
-                    Supplies & Ingredients
-                  </Link>
-                </li>
-                <li>
-                  <Link activeClassName="activeHash" smooth to="#section-4">
-                    Goodies in your Kit
-                  </Link>
-                </li>
-                <li>
-                  <Link activeClass smooth to="#section-5">
-                    How to Book & Participate
-                  </Link>
-                </li>
-                <li>
-                  <Link activeClassName="activeHash" smooth to="/booking">
-                    Book Experience
-                  </Link>
-                </li>
-                <li>
-                  <Link activeClassName="activeHash" smooth to="#section-7">
-                    Other Similar Experiences
-                  </Link>
-                </li>
-              </ul>
+            <div>
+              <span
+                className="scrollBtn scrollLeftBtn"
+                onClick={scrollLeftHandler}
+              >
+                <ChevronLeft
+                  size={theme.sizes.h7}
+                  color={theme.colors.textColor2}
+                />
+              </span>
+              <div className="tab" id="experienceTab">
+                <ul>
+                  <li>
+                    <Button
+                      onClick={() => setSideDrawer(true)}
+                      className="customPollBtn"
+                    >
+                      SEND POLL
+                    </Button>
+                  </li>
+                  <li>
+                    <Link activeClassName="activeHash" smooth to="#section-1">
+                      About Experience
+                    </Link>
+                  </li>
+                  <li>
+                    <Link activeClassName="activeHash" smooth to="#section-2">
+                      About the Expert
+                    </Link>
+                  </li>
+                  <li>
+                    <Link activeClassName="activeHash" smooth to="#section-3">
+                      Supplies & Ingredients
+                    </Link>
+                  </li>
+                  <li>
+                    <Link activeClassName="activeHash" smooth to="#section-4">
+                      Goodies in your Kit
+                    </Link>
+                  </li>
+                  <li>
+                    <Link activeClass smooth to="#section-5">
+                      How to Book & Participate
+                    </Link>
+                  </li>
+                  <li>
+                    <Link activeClassName="activeHash" smooth to="/booking">
+                      Book Experience
+                    </Link>
+                  </li>
+                  <li>
+                    <Link activeClassName="activeHash" smooth to="#section-7">
+                      Other Similar Experiences
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+              <span
+                className="scrollBtn scrollRightBtn"
+                onClick={scrollRightHandler}
+              >
+                <ChevronRight
+                  size={theme.sizes.h7}
+                  color={theme.colors.textColor2}
+                />
+              </span>
             </div>
-            <span
-              className="scrollBtn scrollRightBtn"
-              onClick={scrollRightHandler}
-            >
-              <ChevronRight
-                size={theme.sizes.h7}
-                color={theme.colors.textColor2}
-              />
-            </span>
           </div>
         </TabWrapper>
         <section id="section-1">
@@ -234,7 +247,7 @@ export default function Experience() {
         </aside>
       )}
       <div class="footerBtnWrapper">
-        <Link to="#">
+        <Link to="/sendPoll">
           <Button
             backgroundColor={theme.colors.secondaryColor}
             className="customFooterBtn"
@@ -253,6 +266,15 @@ export default function Experience() {
         </Link>
       </div>
       <ScrollToTop showBelow={250} />
+      <Modal
+        type="sideDrawer"
+        isOpen={sideDrawer}
+        close={() => setSideDrawer(false)}
+      >
+        <div className="modal-content">
+          <SendPoll />
+        </div>
+      </Modal>
     </StyledWrapper>
   );
 }

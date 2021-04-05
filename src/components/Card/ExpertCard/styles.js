@@ -9,7 +9,10 @@ export const Card = styled.div`
   align-items: flex-start;
   padding: 1rem;
   background: ${theme.colors.mainBackground};
-  box-shadow: 0px 8px 12px 2px rgba(0, 0, 0, 0.32);
+  box-shadow: ${({ boxShadow }) =>
+    boxShadow === "true"
+      ? "0px 8px 12px 2px rgba(0, 0, 0, 0.32)"
+      : "none" || "0px 8px 12px 2px rgba(0, 0, 0, 0.32)"};
   border-radius: 16px;
   @media (min-width: 769px) {
     width: 250px;

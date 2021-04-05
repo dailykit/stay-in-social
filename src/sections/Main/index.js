@@ -12,6 +12,8 @@ import {
   Experience,
   Booking,
   Invite,
+  InvitePoll,
+  SendPoll,
 } from "../../pages";
 
 export default function Main() {
@@ -28,6 +30,8 @@ export default function Main() {
         <Route path="/categoryTag" component={CategoryTag} exact />
         <Route path="/booking" component={Booking} exact />
         <Route path="/invite" component={Invite} exact />
+        <Route path="/invitePoll" component={InvitePoll} exact />
+        <Route path="/sendpoll" component={SendPoll} exact />
       </Switch>
     </MainWrapper>
   );

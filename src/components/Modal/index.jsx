@@ -7,10 +7,10 @@ import { ModalDiv } from "./styles";
 export default function Modal({ children, type, close, ...props }) {
   const bottomDrawerStyle = {
     width: "100%",
-    height: "50%",
+    height: "100%",
     transform: props.isOpen
-      ? "translate3d(0px, 100%, 0px)"
-      : "translate3d(0px, 200%, 0px)",
+      ? "translate3d(0px, 5%, 0px)"
+      : "translate3d(0px, 110%, 0px)",
     borderRadius: "50px 50px 0 0",
     boxShadow:
       props.isOpen &&
