@@ -11,6 +11,7 @@ import {
   Expert,
   Experience,
   Booking,
+  Invite,
 } from "../../pages";
 
 export default function Main() {
@@ -26,6 +27,7 @@ export default function Main() {
         <Route path="/signup" component={Signup} exact />
         <Route path="/categoryTag" component={CategoryTag} exact />
         <Route path="/booking" component={Booking} exact />
+        <Route path="/invite" component={Invite} exact />
       </Switch>
     </MainWrapper>
   );

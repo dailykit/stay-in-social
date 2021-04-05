@@ -7,6 +7,7 @@ import { theme } from "../../../theme.js";
 export default function UpcomingExperienceCard({ cardDetails }) {
   return (
     <Card>
+      <h1 className="card-heading">May 4, 2019 | Starts at 9:30am</h1>
       <CardImage>
         <img
           src="https://www.dmarge.com/wp-content/uploads/2020/07/gin-martini-cocktail.jpg"

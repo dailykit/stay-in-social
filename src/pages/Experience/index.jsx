@@ -16,7 +16,6 @@ import {
   ChevronLeft,
   Clock,
   AboutExpert,
-  Booking,
   Masonry,
   Card,
   ScrollToTop,
@@ -26,6 +25,7 @@ import {
   Ingredients,
   BackDrop,
 } from "../../components";
+import Booking from "../Booking";
 import { theme } from "../../theme";
 import { useWindowDimensions } from "../../utils";
 import { expertArray, dataArray } from "../../fakeData";

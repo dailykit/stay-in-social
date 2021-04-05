@@ -14,6 +14,12 @@ export const theme = {
     textColor6: "#4FAC7F",
     textColor7: "#EB98AD",
     textColor8: "#191d28",
+    textColor9: "#14171E",
+    textColor10: "#EB98AD",
+    textColor11: "#71BB97",
+    textColor12: "#7AB6D3",
+    textColor13: "#9A8EDF",
+    textColor14: "#E4BC6D",
     emptyCellColor:
       "linear-gradient(89.74deg, rgba(68, 68, 68, 0.47) 0.21%, rgba(119, 119, 119, 0.09) 99.77%)",
   },

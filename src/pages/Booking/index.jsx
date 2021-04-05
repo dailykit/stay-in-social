@@ -9,7 +9,7 @@ export default function BookingPage() {
   const [isCelebrating, setIsCelebrating] = useState(false);
   const stopCelebration = () => {
     setTimeout(setIsCelebrating(false), 2000);
-    history.push("/");
+    history.push("/invite");
   };
   const startCelebration = () => {
     setIsCelebrating(true);
@@ -17,7 +17,7 @@ export default function BookingPage() {
   };
   return (
     <Wrap>
-      <BackDrop show={isCelebrating} close={stopCelebration}>
+      <BackDrop show={isCelebrating}>
         <div class="booking-done">
           <img src={celebration} alt="celebration-emoji" />
           <p>Your're BOOKED!</p>

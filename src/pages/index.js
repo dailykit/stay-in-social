@@ -7,6 +7,7 @@ import Login from "./Login";
 import Signup from "./Signup";
 import CategoryTag from "./CategoryTag";
 import Booking from "./Booking";
+import Invite from "./Invite";
 
 export {
   Home,
@@ -18,4 +19,5 @@ export {
   Signup,
   CategoryTag,
   Booking,
+  Invite,
 };
