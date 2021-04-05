@@ -71,7 +71,14 @@ export default function Experiences() {
                   columnClassName="my-masonry-grid_column"
                 >
                   {exp[Object.keys(exp)[0]].map((data, i) => {
-                    return <Card key={i} type="experience" data={data} />;
+                    return (
+                      <Card
+                        boxShadow="true"
+                        key={i}
+                        type="experience"
+                        data={data}
+                      />
+                    );
                   })}
                 </Masonry>
                 <Flex

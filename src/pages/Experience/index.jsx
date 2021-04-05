@@ -106,14 +106,16 @@ export default function Experience() {
               </span>
               <div className="tab" id="experienceTab">
                 <ul>
-                  <li>
-                    <Button
-                      onClick={() => setSideDrawer(true)}
-                      className="customPollBtn"
-                    >
-                      SEND POLL
-                    </Button>
-                  </li>
+                  {width > 769 && (
+                    <li>
+                      <Button
+                        onClick={() => setSideDrawer(true)}
+                        className="customPollBtn"
+                      >
+                        SEND POLL
+                      </Button>
+                    </li>
+                  )}
                   <li>
                     <Link activeClassName="activeHash" smooth to="#section-1">
                       About Experience
