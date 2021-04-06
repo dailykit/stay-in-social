@@ -4,10 +4,12 @@ import { Flex } from "@dailykit/ui";
 import { Wrapper, StyledWrap } from "./styles";
 import { Card, Input, Button, Modal, BackDrop } from "../../components";
 import { dataArray } from "../../fakeData";
+import { useWindowDimensions } from "../../utils";
 import placeholderImg from "../../assets/images/placeholderImage.png";
 import pinImg from "../../assets/images/pin.png";
 
 export default function PollResponse() {
+  const { width } = useWindowDimensions();
   const slots = [
     { time: "May 20, 2020  |  9:30 am", vote: 3 },
     { time: "May 21, 2020  |  11:00 am", vote: 6 },
@@ -107,44 +109,48 @@ export default function PollResponse() {
         </div>
 
         {/* submit response modal  */}
-        <Modal type="bottomDrawer" isOpen={drawer} close={closeDrawer}>
-          <div className="modal-content-div">
-            <img className="pinImg" src={pinImg} alt="pin-icon" />
-            <h3 class="response-head">Your Response is submitted!</h3>
-            <h3 class="response-sub-head">
-              Thank you! Enter your information below and we’ll send you and
-              invite with the date and time that Alex selects!
-            </h3>
-            <Input
-              className="custom-response-input"
-              type="text"
-              placeholder="Name"
-              value={responseDetail?.name}
-              onChange={(e) =>
-                setResponseDetail((prev) => {
-                  return { ...prev, name: e.target.value };
-                })
-              }
-            />
-            <Input
-              className="custom-response-input"
-              type="email"
-              placeholder="Email"
-              value={responseDetail?.email}
-              onChange={(e) =>
-                setResponseDetail((prev) => {
-                  return { ...prev, email: e.target.value };
-                })
-              }
-            />
-            <div className="custom-done-btn-wrapper">
-              <Button onClick={doneHandler} className="custom-done-btn">
-                Done
-              </Button>
-            </div>
-          </div>
-        </Modal>
       </Wrapper>
+      <Modal
+        type={width > 769 ? "sideDrawer" : "bottomDrawer"}
+        isOpen={drawer}
+        close={closeDrawer}
+      >
+        <div className="modal-content-div">
+          <img className="pinImg" src={pinImg} alt="pin-icon" />
+          <h3 class="response-head">Your Response is submitted!</h3>
+          <h3 class="response-sub-head">
+            Thank you! Enter your information below and we’ll send you and
+            invite with the date and time that Alex selects!
+          </h3>
+          <Input
+            className="custom-response-input"
+            type="text"
+            placeholder="Name"
+            value={responseDetail?.name}
+            onChange={(e) =>
+              setResponseDetail((prev) => {
+                return { ...prev, name: e.target.value };
+              })
+            }
+          />
+          <Input
+            className="custom-response-input"
+            type="email"
+            placeholder="Email"
+            value={responseDetail?.email}
+            onChange={(e) =>
+              setResponseDetail((prev) => {
+                return { ...prev, email: e.target.value };
+              })
+            }
+          />
+          <div className="custom-done-btn-wrapper">
+            <Button onClick={doneHandler} className="custom-done-btn">
+              Done
+            </Button>
+          </div>
+        </div>
+      </Modal>
       <BackDrop show={isCelebrating}>
         <div class="response-done">
           <img src={pinImg} alt="pin-emoji" />

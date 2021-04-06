@@ -65,6 +65,9 @@ export const Wrapper = styled.div`
     text-align: center;
     margin-bottom: 12px;
   }
+  .accept-form-div {
+    margin-bottom: 4rem;
+  }
   .customInput {
     margin-bottom: 20px;
     color: ${theme.colors.textColor4};
@@ -73,6 +76,7 @@ export const Wrapper = styled.div`
     font-size: ${theme.sizes.h7};
     font-weight: 500;
     color: ${theme.colors.textColor4};
+    margin-bottom: 12px;
   }
 
   .address-wrapper {
@@ -81,6 +85,7 @@ export const Wrapper = styled.div`
     padding: 8px;
     border: 1px solid ${theme.colors.textColor};
     color: ${theme.colors.textColor};
+    cursor: pointer;
   }
 
   .slots-wrapper {
@@ -172,6 +177,47 @@ export const Wrapper = styled.div`
     }
     .custom-done-btn {
       height: 48px;
+    }
+  }
+
+  .normal-p {
+    margin: 0 1rem;
+    font-size: ${theme.sizes.h6};
+    color: ${theme.colors.textColor4};
+    line-height: ${theme.sizes.h3};
+  }
+  .change-head {
+    color: ${theme.colors.textColor};
+    cursor: pointer;
+  }
+
+  .address-div {
+    font-size: ${theme.sizes.h7};
+    font-weight: 500;
+    color: ${theme.colors.textColor4};
+    background: ${theme.colors.mainBackground};
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+
+  @media (min-width: 769px) {
+    width: 60%;
+    height: 100%;
+    margin: 2rem auto;
+    background: #212530;
+    box-shadow: 1px 1px 2px rgba(38, 43, 56, 0.3),
+      -1px -1px 2px rgba(28, 31, 40, 0.5),
+      inset -16px 16px 32px rgba(28, 31, 40, 0.2),
+      inset 16px -16px 32px rgba(28, 31, 40, 0.2),
+      inset -16px -16px 32px rgba(38, 43, 56, 0.9),
+      inset 16px 16px 40px rgba(28, 31, 40, 0.9);
+    padding: 1rem;
+    position: relative;
+    .footer-sticky-btn-div {
+      bottom: 2rem;
     }
   }
 `;

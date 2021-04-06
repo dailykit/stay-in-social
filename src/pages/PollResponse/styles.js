@@ -83,6 +83,51 @@ export const Wrapper = styled.div`
       height: 48px;
     }
   }
+
+  @media (min-width: 769px) {
+    width: 60%;
+    height: 100%;
+    margin: 2rem auto;
+    background: #212530;
+    box-shadow: 1px 1px 2px rgba(38, 43, 56, 0.3),
+      -1px -1px 2px rgba(28, 31, 40, 0.5),
+      inset -16px 16px 32px rgba(28, 31, 40, 0.2),
+      inset 16px -16px 32px rgba(28, 31, 40, 0.2),
+      inset -16px -16px 32px rgba(38, 43, 56, 0.9),
+      inset 16px 16px 40px rgba(28, 31, 40, 0.9);
+    padding: 1rem;
+    position: relative;
+    .footer-sticky-btn-div {
+      bottom: 2rem;
+    }
+  }
+`;
+
+export const StyledWrap = styled.div`
+  .response-done {
+    margin-top: 4rem;
+    padding: 1rem;
+    img {
+      width: 94px;
+      height: 94px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    h2 {
+      font-size: ${theme.sizes.h3};
+      font-weight: 700;
+      color: ${theme.colors.textColor4};
+      text-align: center;
+      margin-bottom: 25px;
+    }
+    p {
+      font-size: ${theme.sizes.h8};
+      font-weight: 600;
+      color: ${theme.colors.textColor4};
+      text-align: center;
+    }
+  }
   .modal-content-div {
     color: ${theme.colors.textColor4};
     padding: 1rem;
@@ -121,33 +166,6 @@ export const Wrapper = styled.div`
     }
     .custom-done-btn {
       height: 48px;
-    }
-  }
-`;
-
-export const StyledWrap = styled.div`
-  .response-done {
-    margin-top: 4rem;
-    padding: 1rem;
-    img {
-      width: 94px;
-      height: 94px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    h2 {
-      font-size: ${theme.sizes.h3};
-      font-weight: 700;
-      color: ${theme.colors.textColor4};
-      text-align: center;
-      margin-bottom: 25px;
-    }
-    p {
-      font-size: ${theme.sizes.h8};
-      font-weight: 600;
-      color: ${theme.colors.textColor4};
-      text-align: center;
     }
   }
 `;

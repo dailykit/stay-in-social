@@ -2,9 +2,17 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Flex } from "@dailykit/ui";
 import { Wrapper, StyledWrap } from "./styles";
-import { Card, Input, Button, Modal, BackDrop } from "../../components";
+import {
+  Card,
+  Input,
+  Button,
+  Modal,
+  BackDrop,
+  ChevronRight,
+} from "../../components";
 import { dataArray } from "../../fakeData";
-import { useWindowDimensions } from "../../utils";
+import { theme } from "../../theme";
+import { useWindowDimensions, validatorFunc, capitalize } from "../../utils";
 import placeholderImg from "../../assets/images/placeholderImage.png";
 import kitImg from "../../assets/images/Box_Open.jpg";
 import celebrationImg from "../../assets/images/celebration.png";
@@ -15,6 +23,64 @@ export default function BookingInviteResponse() {
   const history = useHistory();
   const { width } = useWindowDimensions();
   const [isCelebrating, setIsCelebrating] = useState(false);
+  const [addressType, setAddressType] = useState("home");
+  const [address, setAddress] = useState({
+    fullAddress: {
+      value: "",
+      meta: {
+        isValid: false,
+        isTouched: false,
+        errors: [],
+      },
+    },
+    city: {
+      value: "",
+      meta: {
+        isValid: false,
+        isTouched: false,
+        errors: [],
+      },
+    },
+    zip: {
+      value: "",
+      meta: {
+        isValid: false,
+        isTouched: false,
+        errors: [],
+      },
+    },
+    state: {
+      value: "",
+      meta: {
+        isValid: false,
+        isTouched: false,
+        errors: [],
+      },
+    },
+    phone: {
+      value: "",
+      meta: {
+        isValid: false,
+        isTouched: false,
+        errors: [],
+      },
+    },
+  });
+
+  const allValid = () => {
+    if (
+      validatorFunc.text(address.fullAddress.value).isValid &&
+      validatorFunc.text(address.city.value).isValid &&
+      validatorFunc.text(address.zip.value).isValid &&
+      validatorFunc.text(address.state.value).isValid &&
+      validatorFunc.number(address.phone.value).isValid
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   const stopCelebration = () => {
     setTimeout(setIsCelebrating(false), 2000);
     history.push("/");
@@ -59,31 +125,61 @@ export default function BookingInviteResponse() {
           </Flex>
           <p className="kit-info">Whats included in my Kit?</p>
         </div>
-        <h3 className="heading-before">Accept your Invitation.</h3>
-        <p className="sub-heading-before">
-          Please enter your details below and accept the invitation
-        </p>
-        <Input className="customInput" type="text" placeholder="Your Name" />
-        <Input className="customInput" type="email" placeholder="Your Email" />
+        <div class="accept-form-div">
+          <h3 className="heading-before">Accept your Invitation.</h3>
+          <p className="sub-heading-before">
+            Please enter your details below and accept the invitation
+          </p>
 
-        {/* if kit and experience are paid */}
-        {true && (
-          <>
-            <Input
-              className="customInput"
-              type="text"
-              placeholder="Your Contact Number"
-            />
-            <p className="small-head">
-              Please enter your address to deliver your kit.
-            </p>
-            <div onClick={openDrawer} className="address-wrapper">
-              <Flex container alignItems="center" justifyContent="center">
-                + ADD ADDRESS
-              </Flex>
-            </div>
-          </>
-        )}
+          <Input className="customInput" type="text" placeholder="Your Name" />
+          <Input
+            className="customInput"
+            type="email"
+            placeholder="Your Email"
+          />
+
+          {/* if kit and experience are paid */}
+          {true && (
+            <>
+              <Input
+                className="customInput"
+                type="text"
+                placeholder="Your Contact Number"
+              />
+              <p className="small-head">
+                Please enter your address to deliver your kit.
+              </p>
+
+              {allValid() ? (
+                <>
+                  <Flex container align="center" justifyContent="space-between">
+                    <p className="normal-p">Your kits will be delivered</p>
+                    <Flex container alignItems="center">
+                      <p onClick={openDrawer} className="change-head">
+                        Change Address
+                      </p>
+                      <ChevronRight
+                        size={theme.sizes.h6}
+                        color={theme.colors.textColor}
+                      />
+                    </Flex>
+                  </Flex>
+                  <div className="address-div">
+                    <p>{capitalize(addressType)}</p>
+                    <p>{`${address.fullAddress.value},${address.city.value},${address.state.value}-${address.zip.value}`}</p>
+                    <p>{address.phone.value}</p>
+                  </div>
+                </>
+              ) : (
+                <div onClick={openDrawer} className="address-wrapper">
+                  <Flex container alignItems="center" justifyContent="center">
+                    + ADD ADDRESS
+                  </Flex>
+                </div>
+              )}
+            </>
+          )}
+        </div>
 
         {/* sticky submit button  */}
         <div
@@ -95,15 +191,18 @@ export default function BookingInviteResponse() {
           </p>
           <Button className="custom-accept-btn">Accept Invitation</Button>
         </div>
-
-        <Modal
-          type={width > 679 ? "sideDrawer" : "bottomDrawer"}
-          isOpen={drawer}
-          close={closeDrawer}
-        >
-          <AddressForm />
-        </Modal>
       </Wrapper>
+      <Modal
+        type={width > 769 ? "sideDrawer" : "bottomDrawer"}
+        isOpen={drawer}
+        close={closeDrawer}
+      >
+        <AddressForm
+          setType={(type) => setAddressType(type)}
+          onChange={(data) => setAddress({ ...data })}
+          closeAddressForm={closeDrawer}
+        />
+      </Modal>
       <BackDrop show={isCelebrating}>
         <div class="response-done">
           <img src={celebrationImg} alt="pin-emoji" />
