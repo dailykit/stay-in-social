@@ -25,7 +25,7 @@ export const CardImage = styled.div`
   }
 
   @media (min-width: 769px) {
-    height: 400px;
+    height: 180px;
   }
 `;
 

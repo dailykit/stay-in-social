@@ -11,9 +11,10 @@ import {
   Expert,
   Experience,
   Booking,
-  Invite,
-  InvitePoll,
+  BookingInvite,
+  PollInvite,
   SendPoll,
+  PollResponse,
 } from "../../pages";
 
 export default function Main() {
@@ -29,8 +30,9 @@ export default function Main() {
         <Route path="/signup" component={Signup} exact />
         <Route path="/categoryTag" component={CategoryTag} exact />
         <Route path="/booking" component={Booking} exact />
-        <Route path="/invite" component={Invite} exact />
-        <Route path="/invitePoll" component={InvitePoll} exact />
+        <Route path="/bookingInvite" component={BookingInvite} exact />
+        <Route path="/pollInvite" component={PollInvite} exact />
+        <Route path="/pollResponse" component={PollResponse} exact />
         <Route path="/sendpoll" component={SendPoll} exact />
       </Switch>
     </MainWrapper>

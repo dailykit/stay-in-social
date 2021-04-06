@@ -8,6 +8,7 @@ import AvailableDate from "./AvailableDate";
 import ScrollToTop from "./ScrollToTop";
 import BackDrop from "./BackDrop";
 import Error from "./Error";
+import InviteThrough from "./InviteThrough";
 
 export {
   Button,
@@ -20,6 +21,7 @@ export {
   ScrollToTop,
   BackDrop,
   Error,
+  InviteThrough,
 };
 export * from "./Icons";
 export * from "./Card";

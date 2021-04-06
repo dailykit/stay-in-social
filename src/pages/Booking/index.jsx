@@ -9,7 +9,7 @@ export default function BookingPage() {
   const [isCelebrating, setIsCelebrating] = useState(false);
   const stopCelebration = () => {
     setTimeout(setIsCelebrating(false), 2000);
-    history.push("/invite");
+    history.push("/bookingInvite");
   };
   const startCelebration = () => {
     setIsCelebrating(true);
@@ -23,7 +23,7 @@ export default function BookingPage() {
           <p>Your're BOOKED!</p>
         </div>
       </BackDrop>
-      <Booking onBooking={startCelebration} />
+      <Booking isCelebrating={isCelebrating} onBooking={startCelebration} />
     </Wrap>
   );
 }

@@ -44,17 +44,17 @@ export default function Experience() {
     700: 1,
     500: 1,
   };
-  const history = useHistory();
-  const [isCelebrating, setIsCelebrating] = useState(false);
   const [sideDrawer, setSideDrawer] = useState(false);
-  const stopCelebration = () => {
-    setTimeout(setIsCelebrating(false), 2000);
-    history.push("/");
-  };
-  const startCelebration = () => {
-    setIsCelebrating(true);
-    setTimeout(stopCelebration, 2000);
-  };
+  // const history = useHistory();
+  // const [isCelebrating, setIsCelebrating] = useState(false);
+  // const stopCelebration = () => {
+  //   // setTimeout(setIsCelebrating(false), 2000);
+  //   // history.push("/");
+  // };
+  // const startCelebration = () => {
+  //   setIsCelebrating(true);
+  //   // setTimeout(stopCelebration, 2000);
+  // };
   useEffect(() => {
     if (width > 769) {
       setIconSize("24px");
@@ -238,13 +238,13 @@ export default function Experience() {
       {width > 769 && (
         <aside>
           <Wrap>
-            <BackDrop show={isCelebrating} close={stopCelebration}>
+            {/* <BackDrop show={isCelebrating} close={stopCelebration}>
               <div class="booking-done">
                 <img src={celebration} alt="celebration-emoji" />
                 <p>Your're BOOKED!</p>
               </div>
-            </BackDrop>
-            <Booking onBooking={startCelebration} />
+            </BackDrop> */}
+            <Booking />
           </Wrap>
         </aside>
       )}

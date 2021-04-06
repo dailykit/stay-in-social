@@ -12,7 +12,7 @@ import { theme } from "../../theme";
 import { bookingTimeSlot } from "../../fakeData";
 import { validatorFunc, capitalize } from "../../utils";
 
-export default function Booking({ onBooking }) {
+export default function Booking({ onBooking, isCelebrating }) {
   const pricePerPerson = 12;
   const minimumGuest = 5;
   const kitPrice = 3.8;
@@ -250,7 +250,7 @@ export default function Booking({ onBooking }) {
     }
   }, [isKitAdded, kit]);
   return (
-    <Wrapper>
+    <Wrapper isCelebrating={isCelebrating}>
       <Modal
         isOpen={bottomDrawer}
         close={closeBottomDrawer}

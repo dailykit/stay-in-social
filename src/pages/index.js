@@ -7,8 +7,9 @@ import Login from "./Login";
 import Signup from "./Signup";
 import CategoryTag from "./CategoryTag";
 import Booking from "./Booking";
-import Invite from "./Invite";
-import InvitePoll from "./InvitePoll";
+import BookingInvite from "./BookingInvite";
+import PollInvite from "./PollInvite";
+import PollResponse from "./PollResponse";
 import SendPoll from "./SendPoll";
 
 export {
@@ -21,7 +22,8 @@ export {
   Signup,
   CategoryTag,
   Booking,
-  Invite,
-  InvitePoll,
+  BookingInvite,
+  PollInvite,
   SendPoll,
+  PollResponse,
 };

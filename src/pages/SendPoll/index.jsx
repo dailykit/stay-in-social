@@ -69,7 +69,7 @@ export default function Booking() {
   };
 
   const confirmNPayHandler = () => {
-    history.push("/invitePoll");
+    history.push("/pollInvite");
   };
 
   return (

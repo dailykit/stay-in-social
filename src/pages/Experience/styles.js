@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { theme } from "../../theme";
 
 export const StyledWrapper = styled.div`
+  filter: ${({ isCelebrating }) => isCelebrating && "blur(4px)"};
   display: grid;
   height: calc(100vh - 64px);
   grid-column-gap: 2rem;

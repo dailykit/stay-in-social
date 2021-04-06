@@ -5,11 +5,6 @@ import { Wrapper, GridView } from "./styles";
 import {
   Card,
   ChevronLeft,
-  HorizontalTabs,
-  HorizontalTab,
-  HorizontalTabList,
-  HorizontalTabPanel,
-  HorizontalTabPanels,
   Button,
   CopyIcon,
   FacebookSquare,
@@ -18,8 +13,7 @@ import {
   TwitterSquare,
   MesenggerSquare,
   Modal,
-  Input,
-  CrossIcon,
+  InviteThrough,
 } from "../../components";
 import { theme } from "../../theme";
 import { dataArray } from "../../fakeData";
@@ -28,10 +22,7 @@ import { useWindowDimensions } from "../../utils";
 export default function InvitePoll() {
   const { width } = useWindowDimensions();
   const [bottomDrawer, setBottomDrawer] = useState(false);
-  const [inviteAddress, setInviteAddress] = useState("");
-  const [inviteAddressList, setInviteAddressList] = useState([]);
   const [copyBtnClasses, setCopyBtnClasses] = useState(["customBtn"]);
-  const [bgStyle, setBgStyle] = useState([]);
   const slots = [
     { time: "May 20, 2020  |  9:30 am", vote: 3 },
     { time: "May 21, 2020  |  11:00 am", vote: 6 },
@@ -57,31 +48,7 @@ export default function InvitePoll() {
         }
       );
   };
-  const onChangeHandler = (e) => {
-    const { value } = e.target;
-    const bgColors = [
-      theme.colors.textColor10,
-      theme.colors.textColor11,
-      theme.colors.textColor12,
-      theme.colors.textColor13,
-      theme.colors.textColor14,
-    ];
-    const randomBgColor = bgColors[Math.floor(Math.random() * bgColors.length)];
-    setInviteAddress(value);
-    if (value.indexOf(",") > -1) {
-      setBgStyle((prev) => [...prev, randomBgColor]);
-      setInviteAddress("");
-      setInviteAddressList((prev) => [...prev, value.replace(",", "")]);
-    }
-  };
 
-  const onRemoveHandler = (index) => {
-    console.log(inviteAddressList, index);
-    const updatedInviteAddressList = inviteAddressList;
-    updatedInviteAddressList.splice(index, 1);
-    console.log(updatedInviteAddressList);
-    setInviteAddressList([...updatedInviteAddressList]);
-  };
   return (
     <Wrapper>
       <GridView>
@@ -178,41 +145,7 @@ export default function InvitePoll() {
         close={closeBottomDrawer}
         type={width > 769 ? "sideDrawer" : "bottomDrawer"}
       >
-        <div className="invite-through-mail-div">
-          <h1 className="invite-h1-head">Invite through Email & Phone</h1>
-          <p className="invite-msg">
-            Type emails, phone numbers separated by enter or comma{" "}
-          </p>
-          <Input
-            type="text"
-            placeholder="enter here"
-            value={inviteAddress}
-            onChange={onChangeHandler}
-            className="customInput"
-          />
-          <Flex container alignItems="center" flexWrap="wrap">
-            {inviteAddressList.map((listItem, index) => {
-              return (
-                <div
-                  key={index}
-                  class="invitation-address"
-                  style={{ background: bgStyle[index] }}
-                >
-                  {listItem}
-                  <span
-                    class="remove-btn"
-                    onClick={() => onRemoveHandler(index)}
-                  >
-                    <CrossIcon
-                      size={theme.sizes.h6}
-                      color={theme.colors.textColor4}
-                    />
-                  </span>
-                </div>
-              );
-            })}
-          </Flex>
-        </div>
+        <InviteThrough onChange={(list) => console.log("listttt :", list)} />
       </Modal>
     </Wrapper>
   );

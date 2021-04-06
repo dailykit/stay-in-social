@@ -4,6 +4,7 @@ import { theme } from "../../theme";
 export const Wrapper = styled.div`
   width: 100%;
   height: 100%;
+  filter: ${({ isCelebrating }) => isCelebrating && "blur(4px)"};
   margin-bottom: 2rem;
   .modal-content-div {
     font-size: ${theme.sizes.h8};
