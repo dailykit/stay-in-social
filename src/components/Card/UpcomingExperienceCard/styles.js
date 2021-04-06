@@ -53,6 +53,11 @@ export const CardBody = styled.div`
       font-size: ${theme.sizes.h7};
     }
   }
+  .paid-msg {
+    font-weight: 400;
+    font-size: ${theme.sizes.h7};
+    color: ${theme.colors.textColor4};
+  }
   .book-exp {
     text-align: center;
     font-weight: 800;

@@ -9,6 +9,7 @@ import ScrollToTop from "./ScrollToTop";
 import BackDrop from "./BackDrop";
 import Error from "./Error";
 import InviteThrough from "./InviteThrough";
+import AddressForm from "./AddressForm";
 
 export {
   Button,
@@ -22,6 +23,7 @@ export {
   BackDrop,
   Error,
   InviteThrough,
+  AddressForm,
 };
 export * from "./Icons";
 export * from "./Card";

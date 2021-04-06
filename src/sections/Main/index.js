@@ -15,6 +15,7 @@ import {
   PollInvite,
   SendPoll,
   PollResponse,
+  BookingInviteResponse,
 } from "../../pages";
 
 export default function Main() {
@@ -33,6 +34,11 @@ export default function Main() {
         <Route path="/bookingInvite" component={BookingInvite} exact />
         <Route path="/pollInvite" component={PollInvite} exact />
         <Route path="/pollResponse" component={PollResponse} exact />
+        <Route
+          path="/bookingResponse"
+          component={BookingInviteResponse}
+          exact
+        />
         <Route path="/sendpoll" component={SendPoll} exact />
       </Switch>
     </MainWrapper>

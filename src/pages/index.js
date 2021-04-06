@@ -10,6 +10,7 @@ import Booking from "./Booking";
 import BookingInvite from "./BookingInvite";
 import PollInvite from "./PollInvite";
 import PollResponse from "./PollResponse";
+import BookingInviteResponse from "./BookingInviteResponse";
 import SendPoll from "./SendPoll";
 
 export {
@@ -26,4 +27,5 @@ export {
   PollInvite,
   SendPoll,
   PollResponse,
+  BookingInviteResponse,
 };

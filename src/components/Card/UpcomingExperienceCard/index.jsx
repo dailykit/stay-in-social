@@ -40,19 +40,25 @@ export default function UpcomingExperienceCard({ cardDetails, ...props }) {
             <span>{cardDetails.duration}</span>
           </span>
         </Flex>
-        <Flex container alignItems="center" justifyContent="space-between">
-          <p className="exp-info">
-            $ {cardDetails.price}{" "}
-            <span className="viewReceipt">view receipt</span>
+        {props.paid ? (
+          <p className="paid-msg">
+            😇 Alex has already paid for your experience and kit.
           </p>
-          <p className="exp-info goForward">
-            {cardDetails.participantAccepted}
-            <ChevronRight
-              size={theme.sizes.h8}
-              color={theme.colors.textColor4}
-            />
-          </p>
-        </Flex>
+        ) : (
+          <Flex container alignItems="center" justifyContent="space-between">
+            <p className="exp-info">
+              $ {cardDetails.price}{" "}
+              <span className="viewReceipt">view receipt</span>
+            </p>
+            <p className="exp-info goForward">
+              {cardDetails.participantAccepted}
+              <ChevronRight
+                size={theme.sizes.h8}
+                color={theme.colors.textColor4}
+              />
+            </p>
+          </Flex>
+        )}
       </CardBody>
     </Card>
   );

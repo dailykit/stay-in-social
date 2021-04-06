@@ -5,12 +5,12 @@ import Input from "../Input";
 import Button from "../Button";
 import { Goodies } from "../Goodies";
 import Modal from "../Modal";
-import Error from "../Error";
 import AvailableDate from "../AvailableDate";
 import { CalendarIcon, ChevronLeft, ChevronRight } from "../Icons";
 import { theme } from "../../theme";
 import { bookingTimeSlot } from "../../fakeData";
 import { validatorFunc, capitalize } from "../../utils";
+import AddressForm from "../AddressForm";
 
 export default function Booking({ onBooking, isCelebrating }) {
   const pricePerPerson = 12;
@@ -382,157 +382,11 @@ export default function Booking({ onBooking, isCelebrating }) {
         close={closeAddressForm}
         type="bottomDrawer"
       >
-        <div>
-          <Flex
-            container
-            alignItems="center"
-            padding="1rem"
-            justifyContent="space-evenly"
-          >
-            <Button
-              backgroundColor={
-                addressType === "home"
-                  ? theme.colors.secondaryColor
-                  : theme.colors.mainBackground
-              }
-              isMainShadow
-              className="customAddressBtn"
-              onClick={() => setAddressType("home")}
-            >
-              Home
-            </Button>
-            <Button
-              height="38px"
-              backgroundColor={
-                addressType === "work"
-                  ? theme.colors.secondaryColor
-                  : theme.colors.mainBackground
-              }
-              isMainShadow
-              className="customAddressBtn"
-              onClick={() => setAddressType("work")}
-            >
-              Work
-            </Button>
-            <Button
-              backgroundColor={
-                addressType === "others"
-                  ? theme.colors.secondaryColor
-                  : theme.colors.mainBackground
-              }
-              isMainShadow
-              className="customAddressBtn"
-              onClick={() => setAddressType("others")}
-            >
-              Other
-            </Button>
-          </Flex>
-          <p className="address-head">Shipping Address</p>
-          <Flex
-            container
-            flexDirection="column"
-            padding="1rem"
-            margin="0 0 4rem 0 "
-          >
-            <Flex container flexDirection="column">
-              <Input
-                name="fullAddress"
-                className="customAddressInput"
-                type="text"
-                placeholder="Address"
-                value={address?.fullAddress?.value}
-                onChange={addressHandler}
-                onBlur={onBlurHandler}
-              />
-              {address.fullAddress.meta.isTouched &&
-                !address.fullAddress.meta.isValid &&
-                address.fullAddress.meta.errors.map((error, index) => (
-                  <Error margin="0 0 1rem 0" key={index}>
-                    {error}
-                  </Error>
-                ))}
-            </Flex>
-            <Flex container flexDirection="column">
-              <Input
-                name="city"
-                className="customAddressInput"
-                type="text"
-                placeholder="City"
-                value={address?.city.value}
-                onChange={addressHandler}
-                onBlur={onBlurHandler}
-              />
-              {address.city.meta.isTouched &&
-                !address.city.meta.isValid &&
-                address.city.meta.errors.map((error, index) => (
-                  <Error margin="0 0 1rem 0" key={index}>
-                    {error}
-                  </Error>
-                ))}
-            </Flex>
-            <Flex container flexDirection="column">
-              <Input
-                name="zip"
-                className="customAddressInput"
-                type="text"
-                placeholder="Zip"
-                value={address?.zip.value}
-                onChange={addressHandler}
-                onBlur={onBlurHandler}
-              />
-              {address.zip.meta.isTouched &&
-                !address.zip.meta.isValid &&
-                address.zip.meta.errors.map((error, index) => (
-                  <Error margin="0 0 1rem 0" key={index}>
-                    {error}
-                  </Error>
-                ))}
-            </Flex>
-            <Flex container flexDirection="column">
-              <Input
-                name="state"
-                className="customAddressInput"
-                type="text"
-                placeholder="State"
-                value={address?.state.value}
-                onChange={addressHandler}
-                onBlur={onBlurHandler}
-              />
-              {address.state.meta.isTouched &&
-                !address.state.meta.isValid &&
-                address.state.meta.errors.map((error, index) => (
-                  <Error margin="0 0 1rem 0" key={index}>
-                    {error}
-                  </Error>
-                ))}
-            </Flex>
-            <Flex container flexDirection="column">
-              <Input
-                name="phone"
-                className="customAddressInput"
-                type="tel"
-                placeholder="Phone Number"
-                value={address?.phone.value}
-                onChange={addressHandler}
-                onBlur={onBlurHandler}
-              />
-              {address.phone.meta.isTouched &&
-                !address.phone.meta.isValid &&
-                address.phone.meta.errors.map((error, index) => (
-                  <Error margin="0 0 1rem 0" key={index}>
-                    {error}
-                  </Error>
-                ))}
-            </Flex>
-            <Button
-              onClick={() => allValid() && closeAddressForm()}
-              height="38px"
-              className="customAddressBtn"
-            >
-              Submit
-            </Button>
-          </Flex>
-        </div>
+        <AddressForm
+          closeAddressForm={closeAddressForm}
+          onChange={(data) => setAddress({ ...data })}
+          setType={(selectedType) => setAddressType(selectedType)}
+        />
       </Modal>
 
       <span class="previousBtn" onClick={previousBookingSteps}>
