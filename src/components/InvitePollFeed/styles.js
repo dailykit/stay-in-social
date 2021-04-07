@@ -12,11 +12,22 @@ export const Wrapper = styled.div`
     padding: 1rem;
     flex: 1;
     color: ${theme.colors.textColor4};
+    height: 280px;
+    overflow: auto;
+    .share-btn-div {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      .custom-share-btn {
+        padding: 0 2rem;
+      }
+    }
   }
   .slot-div-wrap {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 2rem;
+    margin-bottom: 1rem;
   }
   .slot-div {
     padding: 1rem;
@@ -54,8 +65,23 @@ export const Wrapper = styled.div`
     .flex-container {
       flex-direction: row;
     }
+    .slots-div {
+      position: relative;
+      .share-btn-div {
+        justify-content: flex-end;
+        position: sticky;
+        bottom: -1rem;
+        padding: 1rem;
+        background: ${theme.colors.mainBackground};
+        .custom-share-btn {
+          width: auto;
+          padding: 0 2rem;
+        }
+      }
+    }
     .slot-div-wrap {
       grid-template-columns: repeat(2, 1fr);
+      margin-bottom: 1rem;
     }
   }
 `;

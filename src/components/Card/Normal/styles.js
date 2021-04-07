@@ -12,6 +12,8 @@ export const Card = styled.div`
       : "none" || "0px 8px 12px 2px rgba(0, 0, 0, 0.32)"};
   border-radius: 16px;
   cursor: pointer;
+  height: ${({ customHeight }) => customHeight};
+  width: ${({ customWidth }) => customWidth};
 `;
 
 export const CardImage = styled.div`
