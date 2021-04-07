@@ -238,12 +238,6 @@ export default function Experience() {
       {width > 769 && (
         <aside>
           <Wrap>
-            {/* <BackDrop show={isCelebrating} close={stopCelebration}>
-              <div class="booking-done">
-                <img src={celebration} alt="celebration-emoji" />
-                <p>Your're BOOKED!</p>
-              </div>
-            </BackDrop> */}
             <Booking />
           </Wrap>
         </aside>
@@ -268,15 +262,17 @@ export default function Experience() {
         </Link>
       </div>
       <ScrollToTop showBelow={250} />
-      <Modal
-        type="sideDrawer"
-        isOpen={sideDrawer}
-        close={() => setSideDrawer(false)}
-      >
-        <div className="modal-content">
-          <SendPoll />
-        </div>
-      </Modal>
+      {width > 769 && (
+        <Modal
+          type="sideDrawer"
+          isOpen={sideDrawer}
+          close={() => setSideDrawer(false)}
+        >
+          <div className="modal-content">
+            <SendPoll />
+          </div>
+        </Modal>
+      )}
     </StyledWrapper>
   );
 }

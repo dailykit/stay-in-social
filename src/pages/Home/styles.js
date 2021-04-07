@@ -13,9 +13,26 @@ export const StyledWrapper = styled.div`
     text-align: center;
     margin-bottom: 20px;
   }
+  .upcomingExperience-div {
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
   @media (min-width: 769px) {
     .experienceHeading {
       font-size: ${theme.sizes.h1};
+    }
+    .upcomingExperience-div {
+      padding: 1.5rem;
+      background: ${theme.colors.mainBackground};
+      box-shadow: 1px 1px 2px rgba(36, 41, 53, 0.3),
+        -1px -1px 2px rgba(30, 33, 43, 0.5),
+        inset -4px 4px 8px rgba(30, 33, 43, 0.2),
+        inset 4px -4px 8px rgba(30, 33, 43, 0.2),
+        inset -4px -4px 8px rgba(36, 41, 53, 0.9),
+        inset 4px 4px 10px rgba(30, 33, 43, 0.9);
+      border-radius: 4px;
     }
   }
 `;

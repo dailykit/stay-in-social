@@ -10,6 +10,7 @@ import BackDrop from "./BackDrop";
 import Error from "./Error";
 import InviteThrough from "./InviteThrough";
 import AddressForm from "./AddressForm";
+import UpcomingExperience from "./UpcomingExperience";
 
 export {
   Button,
@@ -24,6 +25,7 @@ export {
   Error,
   InviteThrough,
   AddressForm,
+  UpcomingExperience,
 };
 export * from "./Icons";
 export * from "./Card";

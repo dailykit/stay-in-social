@@ -6,7 +6,7 @@ export const Card = styled.div`
   align-items: flex-start;
   padding: 1rem;
   background: ${theme.colors.mainBackground};
-  box-shadow: ${({ boxShadow }) =>
+  box-shadow: ${({ boxShadow = "true" }) =>
     boxShadow === "true"
       ? "0px 8px 12px 2px rgba(0, 0, 0, 0.32)"
       : "none" || "0px 8px 12px 2px rgba(0, 0, 0, 0.32)"};

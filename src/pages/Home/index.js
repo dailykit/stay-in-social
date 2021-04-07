@@ -9,6 +9,7 @@ import {
   EditIcon,
   Masonry,
   Modal,
+  UpcomingExperience,
 } from "../../components";
 import { theme } from "../../theme";
 import {
@@ -73,6 +74,10 @@ export default function Home() {
           </NavLink>
         </div>
       </GreetingDiv>
+      <h3 className="experienceHeading">You have 1 Upcoming Experience!</h3>
+      <div className="upcomingExperience-div">
+        <UpcomingExperience />
+      </div>
       <GridViewWrapper>
         <Flex
           container
