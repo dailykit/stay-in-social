@@ -11,6 +11,7 @@ import Error from "./Error";
 import InviteThrough from "./InviteThrough";
 import AddressForm from "./AddressForm";
 import UpcomingExperience from "./UpcomingExperience";
+import InvitePollFeed from "./InvitePollFeed";
 
 export {
   Button,
@@ -26,6 +27,7 @@ export {
   InviteThrough,
   AddressForm,
   UpcomingExperience,
+  InvitePollFeed,
 };
 export * from "./Icons";
 export * from "./Card";

@@ -11,6 +11,7 @@ export const Wrapper = styled.div`
   .card-wrap {
     width: auto;
     height: 251px;
+    margin-bottom: 1rem;
   }
   .invite-response-div {
     padding: 1rem;

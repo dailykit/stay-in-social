@@ -10,6 +10,7 @@ import {
   Masonry,
   Modal,
   UpcomingExperience,
+  InvitePollFeed,
 } from "../../components";
 import { theme } from "../../theme";
 import {
@@ -77,6 +78,10 @@ export default function Home() {
       <h3 className="experienceHeading">You have 1 Upcoming Experience!</h3>
       <div className="upcomingExperience-div">
         <UpcomingExperience />
+      </div>
+      <h3 className="experienceHeading">You have sent 1 Availability Poll!</h3>
+      <div className="upcomingExperience-div">
+        <InvitePollFeed />
       </div>
       <GridViewWrapper>
         <Flex
