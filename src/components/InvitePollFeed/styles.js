@@ -67,6 +67,7 @@ export const Wrapper = styled.div`
     }
     .slots-div {
       position: relative;
+      height: 350px;
       .share-btn-div {
         justify-content: flex-end;
         position: sticky;

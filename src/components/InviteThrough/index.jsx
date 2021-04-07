@@ -20,7 +20,8 @@ export default function InviteThrough({ onChange }) {
     ];
     const randomBgColor = bgColors[Math.floor(Math.random() * bgColors.length)];
     setInviteAddress(value);
-    if (value.indexOf(",") > -1) {
+    console.log(e, e.key, e.keyCode);
+    if (value.indexOf(",") > -1 || e.key === "Enter" || e.keyCode === 13) {
       setBgStyle((prev) => [...prev, randomBgColor]);
       setInviteAddress("");
       setInviteAddressList((prev) => [...prev, value.replace(",", "")]);
@@ -49,6 +50,7 @@ export default function InviteThrough({ onChange }) {
         placeholder="enter here"
         value={inviteAddress}
         onChange={onChangeHandler}
+        onKeyDown={onChangeHandler}
         className="customInput"
       />
       <Flex container alignItems="center" flexWrap="wrap">

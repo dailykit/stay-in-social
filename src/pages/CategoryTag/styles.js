@@ -17,6 +17,9 @@ export const Wrapper = styled.div`
   .categoryTag {
     height: 48px;
     font-size: ${theme.sizes.h8};
+    width: auto;
+    padding: 1rem;
+    margin: 8px;
   }
 
   .skip {
@@ -61,8 +64,7 @@ export const Wrapper = styled.div`
 `;
 
 export const CategoryTagWrap = styled.div`
-  display: grid;
-  grid-gap: 16px;
-  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-  margin: 0 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 `;

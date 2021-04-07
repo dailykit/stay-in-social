@@ -9,6 +9,11 @@ import { dataArray } from "../../fakeData";
 import { useWindowDimensions } from "../../utils";
 export default function InvitePollFeed() {
   const { width } = useWindowDimensions();
+  const slots = [
+    { time: "May 20, 2020  |  9:30 am", vote: 3 },
+    { time: "May 21, 2020  |  11:00 am", vote: 6 },
+    { time: "May 22, 2020  |  11:00 am", vote: 8 },
+  ];
   return (
     <Wrapper>
       <div className="flex-container">
@@ -26,18 +31,22 @@ export default function InvitePollFeed() {
             <p>poll expires on May 6</p>
           </Flex>
           <div class="slot-div-wrap">
-            <div className="slot-div">
-              <Flex
-                container
-                alignItems="center"
-                justifyContent="space-between"
-                margin="0 0 12px 0"
-              >
-                <p className="slot-info-time">May 20, 2020 | 9:30 am</p>
-                <p className="vote-head">7 votes</p>
-              </Flex>
-              <p className="book-slot">Book Slot</p>
-            </div>
+            {slots.map((slot, index) => {
+              return (
+                <div key={index} className="slot-div">
+                  <Flex
+                    container
+                    alignItems="center"
+                    justifyContent="space-between"
+                    margin="0 0 12px 0"
+                  >
+                    <p className="slot-info-time">{slot.time}</p>
+                    <p className="vote-head">{slot.vote} votes</p>
+                  </Flex>
+                  <p className="book-slot">Book Slot</p>
+                </div>
+              );
+            })}
           </div>
           <div class="share-btn-div">
             <Link

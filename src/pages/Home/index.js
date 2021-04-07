@@ -21,7 +21,6 @@ import {
 } from "../../fakeData";
 import { useWindowDimensions } from "../../utils";
 import {
-  GridView,
   GridViewWrapper,
   StyledWrapper,
   CardWrapperForExpert,
@@ -30,17 +29,27 @@ import {
   GreetingDiv,
   CategorySection,
 } from "./styles";
+import CategoryTagPage from "../CategoryTag";
 
 export default function Home() {
   const { width } = useWindowDimensions();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [iconSize, setIconSize] = useState("14px");
+  const [categoryTagDrawer, setCategoryTagDrawer] = useState(false);
   const breakpointColumnsObj = {
     default: 4,
     1100: 3,
     700: 2,
     500: 1,
   };
+
+  const openCategoryTagDrawer = () => {
+    setCategoryTagDrawer(true);
+  };
+  const closeCategoryTagDrawer = () => {
+    setCategoryTagDrawer(false);
+  };
+
   useEffect(() => {
     if (width > 769) {
       setIconSize("24px");
@@ -119,7 +128,9 @@ export default function Home() {
           padding="1rem 0"
           margin="0 0 2rem 0"
         >
-          <h1 className="explore">Explore more Experiences</h1>
+          <NavLink to="/experiences">
+            <h1 className="explore">Explore more Experiences</h1>
+          </NavLink>
           <ChevronRight size={iconSize} color={theme.colors.textColor} />
         </Flex>
       </GridViewWrapper>
@@ -152,7 +163,9 @@ export default function Home() {
           padding="1rem 0"
           margin="0 0 2rem 0"
         >
-          <h1 className="explore ">Explore more Experts</h1>
+          <NavLink to="/experts">
+            <h1 className="explore ">Explore more Experts</h1>
+          </NavLink>
           <ChevronRight size={iconSize} color={theme.colors.textColor} />
         </Flex>
       </GridViewWrapper>
@@ -188,10 +201,21 @@ export default function Home() {
           padding="1rem 0"
           margin="0 0 2rem 0"
         >
-          <h1 className="explore ">Edit Categories</h1>
+          <h1 onClick={openCategoryTagDrawer} className="explore ">
+            Edit Categories
+          </h1>
           <EditIcon size={iconSize} color={theme.colors.textColor} />
         </Flex>
       </CategorySection>
+      <Modal
+        type={width > 769 ? "sideDrawer" : "bottomDrawer"}
+        isOpen={categoryTagDrawer}
+        close={closeCategoryTagDrawer}
+      >
+        <div style={{ padding: "1rem" }}>
+          <CategoryTagPage />
+        </div>
+      </Modal>
     </StyledWrapper>
   );
 }
