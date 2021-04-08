@@ -13,12 +13,13 @@ import { SubscriptionClient } from "subscriptions-transport-ws";
 
 export const DataProvider = ({ children }) => {
   const wssClient = new SubscriptionClient(
-    process.env.REACT_APP_DATA_HUB_SUBSCRIPTIONS_URI,
+    process.env.REACT_APP_DATAHUB_SUBSCRIPTIONS_URL,
     {
       reconnect: true,
       connectionParams: {
         headers: {
           "content-type": "application/json",
+          "x-hasura-admin-secret": process.env.REACT_APP_DATAHUB_ADMIN_SECRET,
         },
       },
     }
@@ -28,12 +29,13 @@ export const DataProvider = ({ children }) => {
     operation.setContext(({ _, headers }) => ({
       headers: {
         ...headers,
+        "x-hasura-admin-secret": process.env.REACT_APP_DATAHUB_ADMIN_SECRET,
       },
     }));
     return forward(operation);
   });
   const httpLink = createHttpLink({
-    uri: `${process.env.REACT_APP_DATA_HUB_URI}`,
+    uri: `${process.env.REACT_APP_DATAHUB_URL}`,
   });
 
   const splitLink = split(

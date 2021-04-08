@@ -46,8 +46,8 @@ export default function Home() {
   };
 
   useQuery(Experience, {
-    onCompleted: ({ experiences_experienceClassType }) => {
-      console.log(experiences_experienceClassType);
+    onCompleted: ({ customers }) => {
+      console.log(customers);
     },
   });
 
