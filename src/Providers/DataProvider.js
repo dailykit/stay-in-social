@@ -18,8 +18,7 @@ export const DataProvider = ({ children }) => {
       reconnect: true,
       connectionParams: {
         headers: {
-          "x-hasura-admin-secret":
-            process.env.REACT_APP_HASURA_GRAPHQL_ADMIN_SECRET,
+          "content-type": "application/json",
         },
       },
     }
@@ -29,8 +28,6 @@ export const DataProvider = ({ children }) => {
     operation.setContext(({ _, headers }) => ({
       headers: {
         ...headers,
-        "x-hasura-admin-secret":
-          process.env.REACT_APP_HASURA_GRAPHQL_ADMIN_SECRET,
       },
     }));
     return forward(operation);

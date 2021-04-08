@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useQuery } from "@apollo/client";
 import { NavLink } from "react-router-dom";
 import { Flex } from "@dailykit/ui";
 import {
@@ -30,6 +31,7 @@ import {
   CategorySection,
 } from "./styles";
 import CategoryTagPage from "../CategoryTag";
+import { Experience } from "../../graphql";
 
 export default function Home() {
   const { width } = useWindowDimensions();
@@ -42,6 +44,12 @@ export default function Home() {
     700: 2,
     500: 1,
   };
+
+  useQuery(Experience, {
+    onCompleted: ({ experiences_experienceClassType }) => {
+      console.log(experiences_experienceClassType);
+    },
+  });
 
   const openCategoryTagDrawer = () => {
     setCategoryTagDrawer(true);
