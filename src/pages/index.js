@@ -12,6 +12,7 @@ import PollInvite from "./PollInvite";
 import PollResponse from "./PollResponse";
 import BookingInviteResponse from "./BookingInviteResponse";
 import SendPoll from "./SendPoll";
+import IntroPage from "./IntroPage";
 
 export {
   Home,
@@ -28,4 +29,5 @@ export {
   SendPoll,
   PollResponse,
   BookingInviteResponse,
+  IntroPage,
 };

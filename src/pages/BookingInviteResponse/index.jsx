@@ -83,7 +83,7 @@ export default function BookingInviteResponse() {
 
   const stopCelebration = () => {
     setTimeout(setIsCelebrating(false), 2000);
-    history.push("/");
+    history.push("/intro");
   };
   const startCelebration = () => {
     setIsCelebrating(true);

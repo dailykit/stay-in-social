@@ -12,6 +12,7 @@ import InviteThrough from "./InviteThrough";
 import AddressForm from "./AddressForm";
 import UpcomingExperience from "./UpcomingExperience";
 import InvitePollFeed from "./InvitePollFeed";
+import Intro from "./Intro";
 
 export {
   Button,
@@ -28,6 +29,7 @@ export {
   AddressForm,
   UpcomingExperience,
   InvitePollFeed,
+  Intro,
 };
 export * from "./Icons";
 export * from "./Card";

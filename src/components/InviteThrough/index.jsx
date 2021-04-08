@@ -20,7 +20,6 @@ export default function InviteThrough({ onChange }) {
     ];
     const randomBgColor = bgColors[Math.floor(Math.random() * bgColors.length)];
     setInviteAddress(value);
-    console.log(e, e.key, e.keyCode);
     if (value.indexOf(",") > -1 || e.key === "Enter" || e.keyCode === 13) {
       setBgStyle((prev) => [...prev, randomBgColor]);
       setInviteAddress("");
